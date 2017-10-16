@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.pwdmanage.dao.SysFunctionDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <resultMap type="SysFunction" id="FunctionResult">
+        <result property="funID" column="FUN_ID"/>
+        <result property="funName" column="FUN_NAME"/>
+        <result property="funUrl" column="FUN_URL"/>
+        <result property="funState" column="FUN_STATE"/>
+    </resultMap>
+
+    <select id="getFun" parameterType="java.lang.String" resultMap="FunctionResult">
+        select FUN_ID,FUN_NAME,FUN_URL,FUN_STATE from
+        sys_function where FUN_NAME=#{name} limit 1
+    </select>
+
+</mapper>

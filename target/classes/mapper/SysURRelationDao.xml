@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.pwdmanage.dao.SysURRelationDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <resultMap type="SysUser" id="UserResult">
+        <result property="userID" column="USER_ID"/>
+        <result property="userName" column="USERNAME"/>
+        <result property="pwd" column="PWD"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="remark" column="REMARK"/>
+        <result property="state" column="STATE"/>
+    </resultMap>
+
+    <resultMap type="SysRole" id="RoleResult">
+        <result property="roleID" column="ROLE_ID"/>
+        <result property="roleName" column="ROLE_NAME"/>
+        <result property="count" column="COUNT"/>
+    </resultMap>
+
+    <resultMap type="SysURRelation" id="RelationResult">
+        <result property="roleID" column="ROLE_ID"/>
+        <result property="urID" column="UR_ID"/>
+        <result property="userID" column="USER_ID"/>
+    </resultMap>
+
+    <select id="getRoleByUser" parameterType="SysUser" resultMap="RoleResult">
+        select a.ROLE_ID,a.ROLE_NAME,a.COUNT from
+        sys_role a inner join sys_urrelation b
+        on a.ROLE_ID = b.ROLE_ID
+        where b.USER_ID=#{userID}
+    </select>
+
+    <select id="getUsersByRole" parameterType="SysRole" resultMap="UserResult">
+        select a.USER_ID,a.USERNAME,a.PWD,a.CREATE_TIME,a.REMARK,a.STATE from
+        sys_user a inner join sys_urrelation b
+        on a.USER_ID = b.USER_ID
+        where b.ROLE_ID=#{roleID}
+    </select>
+
+
+    <insert id="addRelation" parameterType="SysURRelation" >
+        insert into sys_urrelation(UR_ID,USER_ID,ROLE_ID)
+        values(#{urID},#{userID},#{roleID})
+    </insert>
+
+
+    <update id="updateRelation" parameterType="SysURRelation">
+        update sys_urrelation
+        <set>
+            <if test="urID!=null and urID!='' ">
+                UR_ID=#{urID}
+            </if>
+            <if test="userID!=null and userID!='' ">
+                ,USER_ID=#{userID}
+            </if>
+            <if test="roleID!=null and roleID!='' ">
+                ,ROLE_ID=#{roleID}
+            </if>
+        </set>
+        where UR_ID=#{urID}
+    </update>
+
+    <delete id="deleteRelation" parameterType="SysUser">
+        delete from sys_urrelation
+        where USER_ID=#{userID}
+    </delete>
+</mapper>

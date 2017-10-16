@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pwdmanage:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="pwdmanage.war">
+      <element id="artifact" artifact-name="pwdmanage:war exploded" />
+    </root>
+  </artifact>
+</component>

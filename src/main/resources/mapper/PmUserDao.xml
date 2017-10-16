@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.pwdmanage.dao.PmUserDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <resultMap type="PmUser" id="UserResult">
+        <result property="userID" column="USER_ID"/>
+        <result property="userName" column="USERNAME"/>
+        <result property="pwd" column="PWD"/>
+        <result property="mainframeID" column="MAINFRAME_ID"/>
+        <result property="dbID" column="DATABASE_ID"/>
+        <result property="remark" column="REMARK"/>
+        <result property="state" column="STATE"/>
+    </resultMap>
+
+    <select id="findUsers" parameterType="java.util.Map" resultMap="UserResult">
+        select USER_ID,USERNAME,PWD,MAINFRAME_ID,DATABASE_ID,REMARK,STATE from
+        pm_user
+        <where>
+            <if test="userName!=null and userName!='' ">
+                and USERNAME like #{userName}
+            </if>
+            <if test="mainframeID!=null and mainframeID!='' ">
+                and MAINFRAME_ID like #{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                and DATABASE_ID like #{dbID}
+            </if>
+        </where>
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
+
+    <select id="getTotalUser" parameterType="java.util.Map" resultType="java.lang.Long">
+        select count(*) from pm_user
+        <where>
+            <if test="userName!=null and userName!='' ">
+                and USERNAME like #{userName}
+            </if>
+            <if test="mainframeID!=null and mainframeID!='' ">
+                and MAINFRAME_ID like #{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                and DATABASE_ID like #{dbID}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addUser" parameterType="PmUser">
+        insert into pm_user(USER_ID, USERNAME, PWD, MAINFRAME_ID, DATABASE_ID, REMARK, STATE)
+        values(#{userID},#{userName},#{pwd},#{mainframeID},#{dbID},#{remark},#{state})
+    </insert>
+
+    <update id="updateUser" parameterType="PmUser">
+        update pm_user
+        <set>
+            <if test="userName!=null and userName!='' ">
+                USERNAME=#{userName}
+            </if>
+            <if test="pwd!=null and pwd!='' ">
+                ,PWD=#{pwd}
+            </if>
+            <if test="mainframeID!=null and mainframeID!='' ">
+                ,MAINFRAME_ID=#{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                ,DATABASE_ID=#{dbID}
+            </if>
+            <if test="remark!=null and remark!='' ">
+                ,REMARK=#{remark}
+            </if>
+            <if test="state!=null and state!='' ">
+                ,STATE=#{state}
+            </if>
+        </set>
+        where USERNAME=#{userName}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete from pm_user
+        where USER_ID=#{id}
+    </delete>
+
+
+</mapper>

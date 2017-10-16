@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.pwdmanage.dao.SysRFRelationDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+
+    <resultMap type="SysFunction" id="FunctionResult">
+        <result property="funID" column="FUN_ID"/>
+        <result property="funName" column="FUN_NAME"/>
+        <result property="funUrl" column="FUN_URL"/>
+        <result property="funState" column="FUN_STATE"/>
+    </resultMap>
+
+    <select id="getFunByRole" parameterType="SysRole" resultMap="FunctionResult">
+        select a.FUN_ID,a.FUN_NAME,a.FUN_URL,a.FUN_STATE from
+        sys_function a inner join sys_rfrelation b
+        on a.FUN_ID=b.FUN_ID
+        where b.ROLE_ID=#{roleID}
+    </select>
+
+
+</mapper>
