@@ -2,10 +2,11 @@ package com.devin.pwdmanage.dao;
 
 import com.devin.pwdmanage.entity.PmUser;
 import com.devin.pwdmanage.entity.SysUser;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public interface PmUserDao {
 
     /**

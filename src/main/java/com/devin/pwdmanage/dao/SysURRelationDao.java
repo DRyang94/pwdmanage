@@ -3,10 +3,11 @@ package com.devin.pwdmanage.dao;
 import com.devin.pwdmanage.entity.SysRole;
 import com.devin.pwdmanage.entity.SysURRelation;
 import com.devin.pwdmanage.entity.SysUser;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
-
+@Repository
 public interface SysURRelationDao {
     /**
      * 查询用户的角色

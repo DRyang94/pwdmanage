@@ -18,7 +18,7 @@
         sys_user where USERNAME=#{userName} and PWD=#{pwd} limit 1
     </select>
 
-    <select id="findUsers" parameterType="Map" resultMap="UserResult">
+    <select id="findUsers" parameterType="java.util.Map" resultMap="UserResult">
         select USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
         sys_user
         <where>
@@ -31,7 +31,7 @@
         </if>
     </select>
 
-    <select id="getTotalUser" parameterType="Map" resultType="Long">
+    <select id="getTotalUser" parameterType="java.util.Map" resultType="java.lang.Long">
         select count(*) from sys_user
         <where>
             <if test="userName!=null and userName!='' ">
@@ -64,7 +64,7 @@
                 ,STATE=#{state}
             </if>
         </set>
-        where USERNAME=#{userName}
+        where USER_ID=#{userID}
     </update>
 
     <delete id="deleteUser" parameterType="java.lang.String">

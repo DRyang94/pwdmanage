@@ -1,7 +1,6 @@
 package com.devin.pwdmanage;
 
-import com.devin.pwdmanage.util.MD5Util;
-import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -11,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 // junit spring配置文件
-@ContextConfiguration({ "classpath:spring-context-mybatis.xml", "classpath:spring-context.xml" })
+@ContextConfiguration( "classpath*:spring-context.xml")
 public class BaseTest {
 
 

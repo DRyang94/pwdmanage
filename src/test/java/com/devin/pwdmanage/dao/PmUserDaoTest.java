@@ -34,6 +34,7 @@ public class PmUserDaoTest extends BaseTest{
     @Test
     public void updateUserTest() {
         PmUser test = new PmUser();
+        test.setUserID("88f4ecc3961611e7a230c45444fb4cc1");
         test.setUserName("test1");
         test.setPwd("123456");
         //大于0的意思是成功修改了一条记录,即修改成功,如果updateUser()方法返回值等于0,即修改失败

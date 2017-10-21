@@ -3,6 +3,7 @@ package com.devin.pwdmanage.dao;
 import com.devin.pwdmanage.BaseTest;
 import com.devin.pwdmanage.entity.SysUser;
 import com.devin.pwdmanage.util.ColumnGenerator;
+import com.devin.pwdmanage.util.MD5Util;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -18,7 +19,8 @@ public class SysUserDaoTest extends BaseTest{
     public void testLogin() throws Exception {
         SysUser test = new SysUser();
         test.setUserName("admin");
-        test.setPwd("123456");
+        String pwd = MD5Util.MD5Encode("123456","UTF-8");
+        test.setPwd("pwd");
         SysUser user = sysUserDao.login(test);
         System.out.println(user);
     }
@@ -39,6 +41,7 @@ public class SysUserDaoTest extends BaseTest{
     @Test
     public void updateUserTest() {
         SysUser test = new SysUser();
+        test.setUserID("882b82d38a3111e7a501c45444fb4cc1");
         test.setUserName("admin");
         test.setPwd("123456");
         //大于0的意思是成功修改了一条记录,即修改成功,如果updateUser()方法返回值等于0,即修改失败

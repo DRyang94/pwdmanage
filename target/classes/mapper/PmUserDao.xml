@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.devin.pwdmanage.dao.PmUserDao">
     <!-- 目的：为dao接口方法提供sql语句配置 -->
-    <resultMap type="PmUser" id="UserResult">
+    <resultMap type="PmUser" id="PmUserResult">
         <result property="userID" column="USER_ID"/>
         <result property="userName" column="USERNAME"/>
         <result property="pwd" column="PWD"/>
@@ -14,7 +14,7 @@
         <result property="state" column="STATE"/>
     </resultMap>
 
-    <select id="findUsers" parameterType="java.util.Map" resultMap="UserResult">
+    <select id="findUsers" parameterType="java.util.Map" resultMap="PmUserResult">
         select USER_ID,USERNAME,PWD,MAINFRAME_ID,DATABASE_ID,REMARK,STATE from
         pm_user
         <where>
@@ -75,7 +75,7 @@
                 ,STATE=#{state}
             </if>
         </set>
-        where USERNAME=#{userName}
+        where USER_ID=#{userID}
     </update>
 
     <delete id="deleteUser" parameterType="java.lang.String">
