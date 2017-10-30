@@ -50,6 +50,10 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     public int deleteUser(String id) {
+        //不允许删admin的
+        if(id == "882b82d38a3111e7a501c45444fb4cc1") {
+            return 0;
+        }
         return sysUserDao.deleteUser(id);
     }
 

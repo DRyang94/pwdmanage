@@ -16,7 +16,7 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript">
-        var url = "${pageContext.request.contextPath}/users";
+        var url = "/pwdmanage/sysusers";
         var method;
 
         function searchUser() {
@@ -42,7 +42,7 @@
                     $.ajax({
                         type: "DELETE",//方法类型
                         dataType: "json",//预期服务器返回的数据类型
-                        url: "/users/" + ids,//url
+                        url: "/pwdmanage/sysusers" + ids,//url
                         data: {},
                         success: function (result) {
                             console.log(result);//打印服务端返回的数据
@@ -135,7 +135,7 @@
 <body style="margin:1px;">
 <table id="dg" title="用户管理" class="easyui-datagrid" fitColumns="true"
        pagination="true" rownumbers="true"
-       url="${pageContext.request.contextPath}/users/datagrid" fit="true"
+       url="${pageContext.request.contextPath}/sysusers/datagrid" fit="true"
        toolbar="#tb">
     <thead>
     <tr>

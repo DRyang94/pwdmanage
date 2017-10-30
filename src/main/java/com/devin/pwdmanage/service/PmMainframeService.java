@@ -1,16 +1,15 @@
-package com.devin.pwdmanage.dao;
+package com.devin.pwdmanage.service;
 
 import com.devin.pwdmanage.entity.PmMainframe;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
-@Repository
-public interface PmMainframeDao {
+public interface PmMainframeService
+{
 
     /**
-     * 查找主机,参数可为数据库id，limit或其他
+     * 查找主机,参数可为主机id，limit或其他
      * 若为空，返回所有
      *
      * @param map
@@ -19,7 +18,7 @@ public interface PmMainframeDao {
     List<PmMainframe> findMainframe(Map<String, Object> map);
 
     /**
-     *  数量,map可为空，也可以为数据库id
+     *  数量,map可为空，也可以为主机id
      * @param map
      * @return
      */
@@ -34,7 +33,7 @@ public interface PmMainframeDao {
     int updateMainframe(PmMainframe mainframe);
 
     /**
-     * 添加数据库
+     * 添加主机
      *
      * @param mainframe
      * @return
@@ -48,6 +47,4 @@ public interface PmMainframeDao {
      * @return
      */
     int deleteMainframe(String id);
-
-
 }

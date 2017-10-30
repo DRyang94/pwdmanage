@@ -7,45 +7,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4929423-f201-405a-aa4d-698b7721001c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmDatabaseDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PmDatabaseDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmDatabaseDaoTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/pm_databaseDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/pm_databaseDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/pm_mainframeDao.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/PmUserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/PmUserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysFunctionDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysFunctionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysRFRelationDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysRFRelationDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysRoleDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysRoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysURRelationDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysURRelationDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysUserAccessDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysUserAccessDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysUserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/SysUserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/log_opDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/log_opDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/log_optypeDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/log_optypeDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/BaseTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/BaseTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/dao/PmUserDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/dao/PmUserDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/dao/SysUserDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/dao/SysUserDaoTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmDatabaseService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmMainframeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmUserService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmDatabaseServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmMainframeServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmUserServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmMainframeDaoTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pwdmanage.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/pm_databaseDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/pm_mainframeDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/报告/数据库课程设计报告-第六周-邓梁强组.docx" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/PmMainframeDao.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/dao/PmMainframeDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/service/impl/SysUserServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/service/impl/SysUserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/web/SysUserController.class" afterPath="$PROJECT_DIR$/target/classes/com/devin/pwdmanage/web/SysUserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/PmUserDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/PmUserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysFunctionDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysFunctionDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysRFRelationDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysRFRelationDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysRoleDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysRoleDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysURRelationDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysURRelationDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysUserAccessDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysUserAccessDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysUserDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/SysUserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/log_opDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/log_opDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/log_optypeDao.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/dao/log_optypeDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/service/impl/SysUserServiceImpl.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/service/impl/SysUserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/web/SysUserController.class" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/com/devin/pwdmanage/web/SysUserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/util/ColumnGeneratorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/devin/pwdmanage/util/ColumnGeneratorTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysFunctionDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysFunctionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRFRelationDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRFRelationDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRoleDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRoleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysURRelationDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysURRelationDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserAccessDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserAccessDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_opDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_opDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_optypeDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_optypeDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/PmUserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PmUserDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysUserDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysUserDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/BaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/BaseTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmUserDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmUserDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/PmUserDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/PmUserDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/SysUserDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/SysUserDao.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/pm_mainframeDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/util/ColumnGeneratorTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/util/ColumnGeneratorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/PmMainframeDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/PmMainframeDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/mapper/PmUserDao.xml" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/mapper/PmUserDao.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/mapper/SysUserDao.xml" afterPath="$PROJECT_DIR$/target/pwdmanage/WEB-INF/classes/mapper/SysUserDao.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -68,48 +66,58 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="PmMainframeDao.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="PmDatabaseDaoTest.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmDatabaseDaoTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PmDatabaseDao.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmDatabaseDao.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="348">
-                  <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="userManage.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2581">
+              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SysUserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1885">
+              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1015">
+              <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="51" column="102" lean-forward="false" selection-start-line="51" selection-start-column="102" selection-end-line="51" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,6 +127,7 @@
         <option value="Class" />
         <option value="mybatis-generator-config" />
         <option value="Mybatis Mapper" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -129,7 +138,15 @@
       <find>sysusers</find>
       <find>cookie</find>
       <find>Jackson</find>
+      <find>PmDatabase</find>
+      <find>DB</find>
+      <find>datagrid</find>
+      <find>$.ajax</find>
     </findStrings>
+    <replaceStrings>
+      <replace>Mainframe</replace>
+      <replace>PmMainframe</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,24 +163,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/spring-context-tx.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/mian.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/pictureManage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/articleManage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PageBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/util/StringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/util/ResponseUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-context-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SysRoleDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/SysUserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/main2.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/login.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/main.jsp" />
@@ -188,15 +193,27 @@
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRoleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRFRelationDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysFunctionDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmDatabaseDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_optypeDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_opDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PmUserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PmDatabaseDao.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/util/ColumnGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmDatabaseDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmMainframeDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmDatabaseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmDatabaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmMainframeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmMainframeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmUserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp" />
       </list>
     </option>
   </component>
@@ -259,8 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,15 +353,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -392,6 +398,23 @@
               <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
               <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -408,15 +431,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pwdmanage" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pwdmanage" type="b2602c69:ProjectViewProjectNode" />
@@ -427,6 +441,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane">
         <subPane>
@@ -447,26 +463,28 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.27141267" />
-    <property name="settings.editor.selected.configurable" value="Mybatis" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../perfect-ssm" />
     <property name="SearchEverywhereHistoryKey" value="mysqlconnector&#9;FILE&#9;file://D:/code/course_design/pwdmanage/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_37.xml&#10;mysql&#9;PSI&#9;JAVA://com.mysql.jdbc.Collation#mysqlCharset" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources\ueditor" />
-      <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources" />
-      <recent name="D:\code\course_design\pwdmanage\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.devin.pwdmanage.dao" />
-      <recent name="com.devin.pwdmanage.util" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\course_design\pwdmanage\src\main\resources\mapper" />
       <recent name="D:\code\course_design\pwdmanage\src\main\webapp" />
       <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources\views" />
       <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources\ueditor" />
       <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devin.pwdmanage.service.impl" />
+      <recent name="com.devin.pwdmanage.service" />
+      <recent name="com.devin.pwdmanage.dao" />
+      <recent name="com.devin.pwdmanage.util" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources\ueditor" />
+      <recent name="D:\code\course_design\pwdmanage\src\main\webapp\resources" />
+      <recent name="D:\code\course_design\pwdmanage\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,8 +499,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PmDatabaseDaoTest.deleteDBTest">
-    <configuration name="PmDatabaseDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Tomcat Server.javaweb">
+    <configuration name="PmMainframeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.devin.pwdmanage.dao.*" />
@@ -493,7 +511,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.devin.pwdmanage.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmDatabaseDaoTest" />
+      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmMainframeDaoTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -507,7 +525,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PmDatabaseDaoTest.deleteDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PmMainframeDaoTest.deleteMainframeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.devin.pwdmanage.dao.*" />
@@ -518,8 +536,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.devin.pwdmanage.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmDatabaseDaoTest" />
-      <option name="METHOD_NAME" value="deleteDBTest" />
+      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmMainframeDaoTest" />
+      <option name="METHOD_NAME" value="deleteMainframeTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -532,7 +550,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PmDatabaseDaoTest.getTotalDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PmMainframeDaoTest.getTotalMainframeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.devin.pwdmanage.dao.*" />
@@ -543,8 +561,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.devin.pwdmanage.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmDatabaseDaoTest" />
-      <option name="METHOD_NAME" value="getTotalDBTest" />
+      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmMainframeDaoTest" />
+      <option name="METHOD_NAME" value="getTotalMainframeTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -557,7 +575,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PmDatabaseDaoTest.testFindDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PmMainframeDaoTest.testFindMainframe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.devin.pwdmanage.dao.*" />
@@ -568,8 +586,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.devin.pwdmanage.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmDatabaseDaoTest" />
-      <option name="METHOD_NAME" value="testFindDB" />
+      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmMainframeDaoTest" />
+      <option name="METHOD_NAME" value="testFindMainframe" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -582,7 +600,7 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="PmDatabaseDaoTest.updateDBTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PmMainframeDaoTest.updateMainframeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.devin.pwdmanage.dao.*" />
@@ -593,8 +611,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.devin.pwdmanage.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmDatabaseDaoTest" />
-      <option name="METHOD_NAME" value="updateDBTest" />
+      <option name="MAIN_CLASS_NAME" value="com.devin.pwdmanage.dao.PmMainframeDaoTest" />
+      <option name="METHOD_NAME" value="updateMainframeTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -762,19 +780,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.javaweb" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.testFindDB" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.getTotalDBTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.updateDBTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.deleteDBTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.updateMainframeTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.getTotalMainframeTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.testFindMainframe" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.deleteMainframeTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.deleteDBTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.updateDBTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.getTotalDBTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest.testFindDB" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PmDatabaseDaoTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.deleteMainframeTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.testFindMainframe" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.getTotalMainframeTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest.updateMainframeTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PmMainframeDaoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -826,43 +844,47 @@
       <workItem from="1508504741572" duration="2335000" />
       <workItem from="1508553514109" duration="3134000" />
       <workItem from="1508557129594" duration="1956000" />
+      <workItem from="1508572823320" duration="15871000" />
+      <workItem from="1509180028601" duration="877000" />
+      <workItem from="1509197862290" duration="83000" />
+      <workItem from="1509290094303" duration="1473000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PmDatabaseDaoTest - 2017.10.21 at 14h 39m 30s.xml">
-      <configuration name="PmDatabaseDaoTest" configurationId="JUnit" />
+    <history-entry file="ColumnGeneratorTest_testMd5 - 2017.10.21 at 17h 12m 19s.xml">
+      <configuration name="ColumnGeneratorTest.testMd5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PmDatabaseDaoTest_deleteDBTest - 2017.10.21 at 14h 40m 46s.xml">
-      <configuration name="PmDatabaseDaoTest.deleteDBTest" configurationId="JUnit" />
+    <history-entry file="ColumnGeneratorTest_testMd5 - 2017.10.21 at 17h 13m 13s.xml">
+      <configuration name="ColumnGeneratorTest.testMd5" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PmDatabaseDaoTest_getTotalDBTest - 2017.10.21 at 14h 40m 20s.xml">
-      <configuration name="PmDatabaseDaoTest.getTotalDBTest" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest - 2017.10.21 at 20h 42m 31s.xml">
+      <configuration name="PmMainframeDaoTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PmDatabaseDaoTest_testFindDB - 2017.10.21 at 14h 40m 05s.xml">
-      <configuration name="PmDatabaseDaoTest.testFindDB" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_addMainframeTest - 2017.10.21 at 20h 41m 05s.xml">
+      <configuration name="PmMainframeDaoTest.addMainframeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="PmDatabaseDaoTest_updateDBTest - 2017.10.21 at 14h 40m 29s.xml">
-      <configuration name="PmDatabaseDaoTest.updateDBTest" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_addMainframeTest - 2017.10.21 at 20h 42m 03s.xml">
+      <configuration name="PmMainframeDaoTest.addMainframeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SysUserDaoTest_testLogin - 2017.10.21 at 14h 22m 35s.xml">
-      <configuration name="SysUserDaoTest.testLogin" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_deleteMainframeTest - 2017.10.21 at 20h 44m 01s.xml">
+      <configuration name="PmMainframeDaoTest.deleteMainframeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SysUserDaoTest_testLogin - 2017.10.21 at 14h 28m 08s.xml">
-      <configuration name="SysUserDaoTest.testLogin" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_getTotalMainframeTest - 2017.10.21 at 20h 43m 18s.xml">
+      <configuration name="PmMainframeDaoTest.getTotalMainframeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SysUserDaoTest_testLogin - 2017.10.21 at 14h 32m 09s.xml">
-      <configuration name="SysUserDaoTest.testLogin" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_testFindMainframe - 2017.10.21 at 20h 43m 26s.xml">
+      <configuration name="PmMainframeDaoTest.testFindMainframe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SysUserDaoTest_testLogin - 2017.10.21 at 14h 33m 23s.xml">
-      <configuration name="SysUserDaoTest.testLogin" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_testFindMainframe - 2017.10.21 at 20h 43m 51s.xml">
+      <configuration name="PmMainframeDaoTest.testFindMainframe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SysUserDaoTest_testLogin - 2017.10.21 at 14h 35m 41s.xml">
-      <configuration name="SysUserDaoTest.testLogin" configurationId="JUnit" />
+    <history-entry file="PmMainframeDaoTest_updateMainframeTest - 2017.10.21 at 20h 43m 03s.xml">
+      <configuration name="PmMainframeDaoTest.updateMainframeTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207941000" />
+    <option name="totallyTimeSpent" value="226245000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -875,7 +897,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -894,11 +915,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40064794" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.6363636" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19296375" sideWeight="0.6363636" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19189766" sideWeight="0.36363637" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -941,178 +962,24 @@
           <properties />
           <option name="timeStamp" value="79" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="80" />
+      <option name="time" value="82" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/SysFunction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-generator-config.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/pm_userDao.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PmMainframe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/LogOp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/LogOptype.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/SysUserAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-116">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PmUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/pm_databaseDao.xml" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysFunctionDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysURRelationDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PmDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="783">
-          <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
-          <folding>
-            <element signature="e#1370#1371#0" expanded="false" />
-            <element signature="e#1402#1403#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-context-mvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysRoleDaotest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="5" column="62" lean-forward="true" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.7.RELEASE/spring-test-4.1.7.RELEASE.jar!/org/springframework/test/context/DefaultTestContext.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysFunctionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_opDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_optypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRFRelationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysURRelationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserAccessDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.7.RELEASE/spring-test-4.1.7.RELEASE.jar!/org/springframework/test/context/DefaultCacheAwareContextLoaderDelegate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-context-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring-context-tx.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -1195,51 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
           <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc-druid-config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/BaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="17" column="26" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="15" column="12" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,14 +1069,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
           <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/util/MD5Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="23" column="68" lean-forward="false" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1272,46 +1086,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserAccessDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="116">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/BaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmDatabaseDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.1.7.RELEASE/spring-core-4.1.7.RELEASE.jar!/org/springframework/util/Assert.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="42" column="68" lean-forward="true" selection-start-line="42" selection-start-column="61" selection-end-line="42" selection-end-column="68" />
-          <folding />
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-812">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/util/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/util/ColumnGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmMainframeDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PmMainframeDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="57" lean-forward="false" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+        <state relative-caret-position="290">
+          <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
           <folding>
-            <marker date="1508567596929" expanded="true" signature="1985:2157" ph="insert into pm_user... " />
-            <marker date="1508567596929" expanded="true" signature="2233:2952" ph="update pm_us... " />
-            <marker date="1508567596929" expanded="true" signature="3038:3085" ph="delete from " />
+            <marker date="1508588758304" expanded="true" signature="1543:1729" ph="insert into pm_mainframe... " />
+            <marker date="1508588758304" expanded="true" signature="1815:2480" ph="update pm_da... " />
+            <marker date="1508588758304" expanded="true" signature="2571:2637" ph="delete from " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/SysUserAccessDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PmMainframe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="290">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PmDatabaseDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+        <state relative-caret-position="551">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding>
             <marker date="1508567523121" expanded="true" signature="1381:1522" ph="insert into pm_user... " />
             <marker date="1508567523121" expanded="true" signature="1600:2190" ph="update pm_us... " />
@@ -1320,10 +1177,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_opDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysRFRelationDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="32" lean-forward="true" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PmUserDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="6" column="33" lean-forward="false" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        <state relative-caret-position="464">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
           <folding>
             <marker date="1508567282344" expanded="true" signature="1980:2152" ph="insert into sys_user... " />
             <marker date="1508567282344" expanded="true" signature="2228:2944" ph="update sys_u... " />
@@ -1332,28 +1213,229 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/devin/pwdmanage/dao/PmDatabaseDaoTest.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.7.RELEASE/spring-context-4.1.7.RELEASE.jar!/org/springframework/stereotype/Repository.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="38" column="15" lean-forward="true" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        <state relative-caret-position="290">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/entity/PageBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/log_optypeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/SysUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmDatabaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        <state relative-caret-position="145">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmMainframeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1160">
+          <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmUserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#480#481#0" expanded="false" />
+            <element signature="e#527#528#0" expanded="false" />
+            <element signature="e#705#706#0" expanded="false" />
+            <element signature="e#755#756#0" expanded="false" />
+            <element signature="e#1006#1007#0" expanded="false" />
+            <element signature="e#1053#1054#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmMainframeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="44" column="11" lean-forward="false" selection-start-line="44" selection-start-column="11" selection-end-line="44" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/PmUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/dao/SysUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc-druid-config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmDatabaseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <element signature="e#646#647#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#805#806#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#912#913#0" expanded="true" />
+            <element signature="e#954#955#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1175#1176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/main2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/SysUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/PmDatabaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/service/impl/PmMainframeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/jquery-easyui-1.3.3/plugins/jquery.tabs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-405">
+          <caret line="459" column="4" lean-forward="false" selection-start-line="459" selection-start-column="4" selection-end-line="459" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_apps.bdimg.com_libs_jquery_2.1.4_jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="7322" column="35" lean-forward="true" selection-start-line="7322" selection-start-column="35" selection-end-line="7322" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/jquery-easyui-1.3.3/plugins/jquery.datagrid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-571">
+          <caret line="1553" column="4" lean-forward="false" selection-start-line="1553" selection-start-column="4" selection-end-line="1553" selection-end-column="4" />
+          <folding>
+            <marker date="1505735723850" expanded="true" signature="68363:68376" ph="..." />
+            <marker date="1505735723850" expanded="true" signature="68478:68500" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1015">
+          <caret line="31" column="15" lean-forward="true" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="51" column="102" lean-forward="false" selection-start-line="51" selection-start-column="102" selection-end-line="51" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/devin/pwdmanage/web/SysUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1885">
+          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/views/userManage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2581">
+          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding />
         </state>
       </provider>

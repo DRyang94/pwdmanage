@@ -1,5 +1,6 @@
 package com.devin.pwdmanage.util;
 
+import com.devin.pwdmanage.BaseTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -13,8 +14,7 @@ import java.sql.Date;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 // junit spring配置文件
-@ContextConfiguration({ "classpath:spring/spring-dao.xml", "classpath:spring/spring-service.xml" })
-public class ColumnGeneratorTest {
+public class ColumnGeneratorTest extends BaseTest{
 
     @Test
     public void testGetUUID() throws Exception {
@@ -25,5 +25,11 @@ public class ColumnGeneratorTest {
     public void testGetTime() throws Exception {
         System.out.println(ColumnGenerator.getTime());
     }
+
+    @Test
+    public void testMd5() throws Exception {
+        System.out.println(MD5Util.MD5Encode("askfhkasjfhkjfhakjewjhfjkahfrkaehr","UTF-8"));
+    }
+
 
 }

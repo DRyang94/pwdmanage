@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.devin.pwdmanage.dao.PmUserDao">
     <!-- 目的：为dao接口方法提供sql语句配置 -->
-    <resultMap type="PmUser" id="UserResult">
+    <resultMap type="PmUser" id="PmUserResult">
         <result property="userID" column="USER_ID"/>
         <result property="userName" column="USERNAME"/>
         <result property="pwd" column="PWD"/>
@@ -14,17 +14,18 @@
         <result property="state" column="STATE"/>
     </resultMap>
 
-    <select id="login" parameterType="SysUser" resultMap="UserResult">
-        select USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
-        sys_user where USERNAME=#{userName} and PWD=#{pwd} limit 1
-    </select>
-
-    <select id="findUsers" parameterType="Map" resultMap="UserResult">
-        select USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
-        sys_user
+    <select id="findUsers" parameterType="java.util.Map" resultMap="PmUserResult">
+        select USER_ID,USERNAME,PWD,MAINFRAME_ID,DATABASE_ID,REMARK,STATE from
+        pm_user
         <where>
             <if test="userName!=null and userName!='' ">
                 and USERNAME like #{userName}
+            </if>
+            <if test="mainframeID!=null and mainframeID!='' ">
+                and MAINFRAME_ID like #{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                and DATABASE_ID like #{dbID}
             </if>
         </where>
         <if test="start!=null and size!=null">
@@ -32,22 +33,28 @@
         </if>
     </select>
 
-    <select id="getTotalUser" parameterType="Map" resultType="Long">
-        select count(*) from sys_user
+    <select id="getTotalUser" parameterType="java.util.Map" resultType="java.lang.Long">
+        select count(*) from pm_user
         <where>
             <if test="userName!=null and userName!='' ">
                 and USERNAME like #{userName}
             </if>
+            <if test="mainframeID!=null and mainframeID!='' ">
+                and MAINFRAME_ID like #{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                and DATABASE_ID like #{dbID}
+            </if>
         </where>
     </select>
 
-    <insert id="addUser" parameterType="SysUser">
-        insert into sys_user(USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE)
-        values(#{userID},#{userName},#{pwd},#{createTime},#{remark},#{state})
+    <insert id="addUser" parameterType="PmUser">
+        insert into pm_user(USER_ID, USERNAME, PWD, MAINFRAME_ID, DATABASE_ID, REMARK, STATE)
+        values(#{userID},#{userName},#{pwd},#{mainframeID},#{dbID},#{remark},#{state})
     </insert>
 
-    <update id="updateUser" parameterType="SysUser">
-        update sys_user
+    <update id="updateUser" parameterType="PmUser">
+        update pm_user
         <set>
             <if test="userName!=null and userName!='' ">
                 USERNAME=#{userName}
@@ -55,8 +62,11 @@
             <if test="pwd!=null and pwd!='' ">
                 ,PWD=#{pwd}
             </if>
-            <if test="createTime!=null and createTime!='' ">
-                ,CREATE_TIME=#{createTime}
+            <if test="mainframeID!=null and mainframeID!='' ">
+                ,MAINFRAME_ID=#{mainframeID}
+            </if>
+            <if test="dbID!=null and dbID!='' ">
+                ,DATABASE_ID=#{dbID}
             </if>
             <if test="remark!=null and remark!='' ">
                 ,REMARK=#{remark}
@@ -65,11 +75,11 @@
                 ,STATE=#{state}
             </if>
         </set>
-        where USERNAME=#{userName}
+        where USER_ID=#{userID}
     </update>
 
     <delete id="deleteUser" parameterType="java.lang.String">
-        delete from sys_user
+        delete from pm_user
         where USER_ID=#{id}
     </delete>
 
