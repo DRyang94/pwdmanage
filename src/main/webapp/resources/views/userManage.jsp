@@ -80,7 +80,7 @@
             var password = $("#password").val();
             var remark = $("#remark").val();
             var id = $("#userId").val();
-            var data = {"userId": id, "userName": userName,
+            var data = {"userID": id, "userName": userName,
                 "pwd": password, "createTime": null, "remark": remark, "state": null}
             $.ajax({
                 type: method,//方法类型
@@ -118,16 +118,18 @@
                 return;
             }
             var row = selectedRows[0];
+            console.log(row);
             $("#dlg").dialog("open").dialog("setTitle", "编辑用户信息");
             $('#fm').form('load', row);
             $("#password").val("******");
-            $("#userId").val(row.id);
+            $("#userId").val(row.userID);
             method = "PUT";
         }
 
         function resetValue() {
             $("#userName").val("");
             $("#password").val("");
+            $("#remark").val("");
         }
 
         function closeUserDialog() {
@@ -150,9 +152,6 @@
         <th field="createTime" width="20" align="center">创建时间</th>
         <th field="remark" width="20" align="center">备注</th>
         <th field="state" width="20" align="center">状态</th>
-
-
-
     </tr>
     </thead>
 </table>

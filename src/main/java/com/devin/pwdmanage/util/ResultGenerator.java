@@ -32,6 +32,7 @@ public class ResultGenerator {
             message = DEFAULT_FAIL_MESSAGE;
         }
         result.setMessage(message);
+        result.setData("nothing here");
         return result;
     }
 

@@ -41,8 +41,8 @@ public class SysUserDaoTest extends BaseTest{
     @Test
     public void updateUserTest() {
         SysUser test = new SysUser();
-        test.setUserID("882b82d38a3111e7a501c45444fb4cc1");
-        test.setUserName("admin");
+        test.setUserID("47fa9ea788b343239a0e311b43b307b7");
+        test.setUserName("3");
         test.setPwd("123456");
         //大于0的意思是成功修改了一条记录,即修改成功,如果updateUser()方法返回值等于0,即修改失败
         sysUserDao.updateUser(test);
