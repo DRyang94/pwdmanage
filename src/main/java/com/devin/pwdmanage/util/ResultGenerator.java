@@ -13,6 +13,7 @@ public class ResultGenerator {
         Result result = new Result();
         result.setResultCode(Constants.RESULT_CODE_SUCCESS);
         result.setMessage(DEFAULT_SUCCESS_MESSAGE);
+        result.setData("nothing here");
         return result;
     }
 

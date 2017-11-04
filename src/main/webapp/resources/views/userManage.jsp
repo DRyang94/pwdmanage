@@ -78,8 +78,10 @@
         function saveUser() {
             var userName = $("#userName").val();
             var password = $("#password").val();
+            var remark = $("#remark").val();
             var id = $("#userId").val();
-            var data = {"id": id, "password": password, "userName": userName}
+            var data = {"userId": id, "userName": userName,
+                "pwd": password, "createTime": null, "remark": remark, "state": null}
             $.ajax({
                 type: method,//方法类型
                 dataType: "json",//预期服务器返回的数据类型
@@ -101,7 +103,9 @@
                     }
                     ;
                 },
-                error: function () {
+                error: function (result) {
+                    console.log(arguments[0]);
+                    console.log(result);
                     $.messager.alert("系统提示", "操作失败");
                 }
             });
@@ -140,8 +144,15 @@
     <thead>
     <tr>
         <th field="cb" checkbox="true" align="center"></th>
-        <th field="id" width="50" align="center">编号</th>
-        <th field="userName" width="100" align="center">用户名</th>
+        <th field="userID" width="30" align="center">ID</th>
+        <th field="userName" width="10" align="center">用户名</th>
+        <th field="pwd" width="30" align="center">密码(加密后)</th>
+        <th field="createTime" width="20" align="center">创建时间</th>
+        <th field="remark" width="20" align="center">备注</th>
+        <th field="state" width="20" align="center">状态</th>
+
+
+
     </tr>
     </thead>
 </table>
@@ -179,6 +190,13 @@
                 <td>密码：</td>
                 <td><input type="text" id="password" name="password"
                            class="easyui-validatebox" required="true"/>&nbsp;<font
+                        color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <td><input type="text" id="remark" name="remark"
+                           class="easyui-validatebox" required="false"/>&nbsp;<font
                         color="red">*</font>
                 </td>
             </tr>

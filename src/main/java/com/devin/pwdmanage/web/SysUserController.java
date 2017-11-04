@@ -6,12 +6,10 @@ import com.devin.pwdmanage.entity.PageBean;
 import com.devin.pwdmanage.entity.SysRole;
 import com.devin.pwdmanage.entity.SysUser;
 import com.devin.pwdmanage.service.SysUserService;
-import com.devin.pwdmanage.util.MD5Util;
-import com.devin.pwdmanage.util.ResponseUtil;
-import com.devin.pwdmanage.util.ResultGenerator;
-import com.devin.pwdmanage.util.StringUtil;
+import com.devin.pwdmanage.util.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -78,8 +76,12 @@ public class SysUserController {
         map.put("size", pageBean.getPageSize());
         List<SysUser> userList = sysUserService.findUsers(map);
         Long total = sysUserService.getTotalUser(map);
+        JsonConfig config = new JsonConfig();
+        config.setIgnoreDefaultExcludes(false);
+        config.registerJsonValueProcessor(java.util.Date.class,
+                new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
         JSONObject result = new JSONObject();
-        JSONArray jsonArray = JSONArray.fromObject(userList);
+        JSONArray jsonArray = JSONArray.fromObject(userList, config);
         result.put("rows", jsonArray);
         result.put("total", total);
         ResponseUtil.write(response, result);
@@ -98,6 +100,8 @@ public class SysUserController {
         int resultTotal = 0;
         String MD5pwd = MD5Util.MD5Encode(user.getPwd(), "UTF-8");
         user.setPwd(MD5pwd);
+        user.setUserID(ColumnGenerator.getUUID());
+        user.setCreateTime(ColumnGenerator.getTime());
         resultTotal = sysUserService.addUser(user);
         if (resultTotal > 0) {
             return ResultGenerator.genSuccessResult();
