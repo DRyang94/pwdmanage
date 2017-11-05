@@ -33,7 +33,7 @@
             }
             var strIds = [];
             for (var i = 0; i < selectedRows.length; i++) {
-                strIds.push(selectedRows[i].id);
+                strIds.push(selectedRows[i].userID);
             }
             var ids = strIds.join(",");
             $.messager.confirm("系统提示", "您确认要删除这<font color=red>"
@@ -42,7 +42,7 @@
                     $.ajax({
                         type: "DELETE",//方法类型
                         dataType: "json",//预期服务器返回的数据类型
-                        url: "/pwdmanage/sysusers" + ids,//url
+                        url: "/pwdmanage/sysusers/" + ids,//url
                         data: {},
                         success: function (result) {
                             console.log(result);//打印服务端返回的数据
@@ -78,8 +78,10 @@
         function saveUser() {
             var userName = $("#userName").val();
             var password = $("#password").val();
+            var remark = $("#remark").val();
             var id = $("#userId").val();
-            var data = {"id": id, "password": password, "userName": userName}
+            var data = {"userID": id, "userName": userName,
+                "pwd": password, "createTime": null, "remark": remark, "state": null}
             $.ajax({
                 type: method,//方法类型
                 dataType: "json",//预期服务器返回的数据类型
@@ -101,7 +103,9 @@
                     }
                     ;
                 },
-                error: function () {
+                error: function (result) {
+                    console.log(arguments[0]);
+                    console.log(result);
                     $.messager.alert("系统提示", "操作失败");
                 }
             });
@@ -114,16 +118,19 @@
                 return;
             }
             var row = selectedRows[0];
+            console.log(row);
             $("#dlg").dialog("open").dialog("setTitle", "编辑用户信息");
             $('#fm').form('load', row);
             $("#password").val("******");
-            $("#userId").val(row.id);
+            $("#userId").val(row.userID);
+            $("#remark").val(row.remark);
             method = "PUT";
         }
 
         function resetValue() {
             $("#userName").val("");
             $("#password").val("");
+            $("#remark").val("");
         }
 
         function closeUserDialog() {
@@ -140,8 +147,12 @@
     <thead>
     <tr>
         <th field="cb" checkbox="true" align="center"></th>
-        <th field="id" width="50" align="center">编号</th>
-        <th field="userName" width="100" align="center">用户名</th>
+        <th field="userID" width="30" align="center">ID</th>
+        <th field="userName" width="10" align="center">用户名</th>
+        <th field="pwd" width="30" align="center">密码(加密后)</th>
+        <th field="createTime" width="20" align="center">创建时间</th>
+        <th field="remark" width="20" align="center">备注</th>
+        <th field="state" width="20" align="center">状态</th>
     </tr>
     </thead>
 </table>
@@ -179,6 +190,13 @@
                 <td>密码：</td>
                 <td><input type="text" id="password" name="password"
                            class="easyui-validatebox" required="true"/>&nbsp;<font
+                        color="red">*</font>
+                </td>
+            </tr>
+            <tr>
+                <td>备注：</td>
+                <td><input type="text" id="remark" name="remark"
+                           class="easyui-validatebox" required="false"/>&nbsp;<font
                         color="red">*</font>
                 </td>
             </tr>

@@ -1,6 +1,7 @@
 package com.devin.pwdmanage.service;
 
 import com.devin.pwdmanage.entity.PmUser;
+import com.devin.pwdmanage.util.PmUsersForShow;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public interface PmUserService
      * @param map
      * @return
      */
-    List<PmUser> findUsers(Map<String, Object> map);
+    List<PmUsersForShow> findUsers(Map<String, Object> map);
 
     /** 用户数量,map可为空，也可以为具体用户名，主机id，数据库id
      * @param map

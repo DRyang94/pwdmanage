@@ -140,7 +140,8 @@ public class SysUserController {
     @RequestMapping(value = "/{ids}", method = RequestMethod.DELETE)
     @ResponseBody
     public Result delete(@PathVariable(value = "ids") String ids) throws Exception {
-        if (ids.length() > 20) {
+    //同时删除20位以上的用户（超过最大值了）
+        if (ids.length() > 20 * 32) {
             return ResultGenerator.genFailResult("ERROR");
         }
         String[] idsStr = ids.split(",");

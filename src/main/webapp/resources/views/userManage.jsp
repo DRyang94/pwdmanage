@@ -33,7 +33,7 @@
             }
             var strIds = [];
             for (var i = 0; i < selectedRows.length; i++) {
-                strIds.push(selectedRows[i].id);
+                strIds.push(selectedRows[i].userID);
             }
             var ids = strIds.join(",");
             $.messager.confirm("系统提示", "您确认要删除这<font color=red>"
@@ -42,7 +42,7 @@
                     $.ajax({
                         type: "DELETE",//方法类型
                         dataType: "json",//预期服务器返回的数据类型
-                        url: "/pwdmanage/sysusers" + ids,//url
+                        url: "/pwdmanage/sysusers/" + ids,//url
                         data: {},
                         success: function (result) {
                             console.log(result);//打印服务端返回的数据
@@ -123,6 +123,7 @@
             $('#fm').form('load', row);
             $("#password").val("******");
             $("#userId").val(row.userID);
+            $("#remark").val(row.remark);
             method = "PUT";
         }
 
