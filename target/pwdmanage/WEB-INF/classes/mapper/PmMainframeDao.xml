@@ -8,23 +8,36 @@
         <result property="mainframeID" column="MAINFRAME_ID"/>
         <result property="mainframeName" column="MAINFRAME_NAME"/>
         <result property="systemInfo" column="SYSTEM_INFO"/>
-        <result property="systemVersion" column="SYSTEM_VERSION"/>
         <result property="ip" column="IP"/>
         <result property="port" column="PORT"/>
+        <result property="rootName" column="ROOT_NAME"/>
+        <result property="rootPwd" column="ROOT_PWD"/>
     </resultMap>
 
     <select id="findMainframe" parameterType="java.util.Map" resultMap="MainframeResult">
-        select MAINFRAME_ID, MAINFRAME_NAME, SYSTEM_INFO, SYSTEM_VERSION, IP, PORT
+        select MAINFRAME_ID, MAINFRAME_NAME, SYSTEM_INFO, IP, PORT, ROOT_NAME, ROOT_PWD
         from
         pm_mainframe
         <where>
             <if test="mainframeID!=null and mainframeID!='' ">
                 and MAINFRAME_ID like #{mainframeID}
             </if>
+            <if test="mainframeName!=null and mainframeName!='' ">
+                and MAINFRAME_NAME like #{mainframeName}
+            </if>
+            <if test="systemInfo!=null and systemInfo!='' ">
+                and SYSTEM_INFO like #{systemInfo}
+            </if>
+            <if test="ip!=null and ip!='' ">
+                and IP like #{ip}
+            </if>
+            <if test="port!=null and port!='' ">
+                and PORT like #{port}
+            </if>
         </where>
         <if test="start!=null and size!=null">
         limit #{start},#{size}
-    </if>
+        </if>
     </select>
 
     <select id="getTotalMainframe" parameterType="java.util.Map" resultType="java.lang.Long">
@@ -36,9 +49,10 @@
         </where>
     </select>
 
+
     <insert id="addMainframe" parameterType="PmMainframe">
-        insert into pm_mainframe(MAINFRAME_ID, MAINFRAME_NAME, SYSTEM_INFO, SYSTEM_VERSION, IP, PORT)
-        values(#{mainframeID},#{mainframeName},#{systemInfo},#{systemVersion},#{ip},#{port})
+        insert into pm_mainframe(MAINFRAME_ID, MAINFRAME_NAME, SYSTEM_INFO, IP, PORT, ROOT_NAME, ROOT_PWD)
+        values(#{mainframeID},#{mainframeName},#{systemInfo},#{ip},#{port}, #{rootName}, #{rootPwd})
     </insert>
 
     <update id="updateMainframe" parameterType="PmMainframe">
@@ -50,14 +64,17 @@
             <if test="systemInfo!=null and systemInfo!='' ">
                 ,SYSTEM_INFO=#{systemInfo}
             </if>
-            <if test="systemVersion!=null and systemVersion!='' ">
-                ,SYSTEM_VERSION=#{systemVersion}
-            </if>
             <if test="ip!=null and ip!='' ">
                 ,IP=#{ip}
             </if>
             <if test="port!=null and port!='' ">
                 ,PORT=#{port}
+            </if>
+            <if test="rootName!=null and rootName!='' ">
+                ,ROOT_NAME=#{rootName}
+            </if>
+            <if test="rootPwd!=null and rootPwd!='' ">
+                ,ROOT_PWD=#{rootPwd}
             </if>
         </set>
         where MAINFRAME_ID=#{mainframeID}

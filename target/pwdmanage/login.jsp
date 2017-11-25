@@ -44,10 +44,12 @@
         <form class="m-t" role="form" id="adminlogin" method="post"
               name="adminlogin" onsubmit="return false" action="##">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="用户名" name="userName" id="userName" required="">
+                <input type="email" class="form-control" placeholder="用户名"
+                       name="userName" id="userName" required="" onkeydown="if(event.keyCode==13) login()">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="密码" name="pwd" id="pwd" required="">
+                <input type="password" class="form-control"
+                       placeholder="密码" name="pwd" id="pwd" required="" onkeydown="if(event.keyCode==13) login()">
             </div>
             <button type="button" class="btn btn-primary block full-width m-b" onclick="javascript:login();">登 录
             </button>

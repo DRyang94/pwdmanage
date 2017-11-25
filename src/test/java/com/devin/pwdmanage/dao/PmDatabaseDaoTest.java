@@ -45,9 +45,10 @@ public class PmDatabaseDaoTest extends BaseTest{
         test.setDbID("test");
         test.setDbName("test");
         test.setDbInfo("test");
-        test.setDbVersion("test");
         test.setIp("test");
         test.setPort(22);
+        test.setRootName("root");
+        test.setRootPwd("123456");
         pmDatabaseDao.addDB(test);
     }
 

@@ -27,6 +27,9 @@
             <if test="dbID!=null and dbID!='' ">
                 and DATABASE_ID like #{dbID}
             </if>
+            <if test="state!=null and state!='' ">
+                and STATE like #{state}
+            </if>
         </where>
         <if test="start!=null and size!=null">
             limit #{start},#{size}

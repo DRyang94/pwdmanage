@@ -1,17 +1,23 @@
 package com.devin.pwdmanage.entity;
 
 public class PmDatabase {
+    public PmDatabase() {
+    }
+
     private String dbID;
 
     private String dbName;
 
-    private String dbInfo;
 
-    private String dbVersion;
+    private String dbInfo;
 
     private String ip;
 
     private int port;
+
+    private String rootName;
+
+    private String rootPwd;
 
     @Override
     public String toString() {
@@ -19,10 +25,27 @@ public class PmDatabase {
                 "dbID='" + dbID + '\'' +
                 ", dbName='" + dbName + '\'' +
                 ", dbInfo='" + dbInfo + '\'' +
-                ", dbVersion='" + dbVersion + '\'' +
                 ", ip='" + ip + '\'' +
                 ", port=" + port +
+                ", rootName='" + rootName + '\'' +
+                ", rootPwd='" + rootPwd + '\'' +
                 '}';
+    }
+
+    public String getRootName() {
+        return rootName;
+    }
+
+    public void setRootName(String rootName) {
+        this.rootName = rootName;
+    }
+
+    public String getRootPwd() {
+        return rootPwd;
+    }
+
+    public void setRootPwd(String rootPwd) {
+        this.rootPwd = rootPwd;
     }
 
     public String getDbID() {
@@ -49,14 +72,6 @@ public class PmDatabase {
         this.dbInfo = dbInfo;
     }
 
-    public String getDbVersion() {
-        return dbVersion;
-    }
-
-    public void setDbVersion(String dbVersion) {
-        this.dbVersion = dbVersion;
-    }
-
     public String getIp() {
         return ip;
     }
@@ -73,5 +88,13 @@ public class PmDatabase {
         this.port = port;
     }
 
-
+    public PmDatabase(String dbID, String dbName, String dbInfo, String ip, int port, String rootName, String rootPwd) {
+        this.dbID = dbID;
+        this.dbName = dbName;
+        this.dbInfo = dbInfo;
+        this.ip = ip;
+        this.port = port;
+        this.rootName = rootName;
+        this.rootPwd = rootPwd;
+    }
 }

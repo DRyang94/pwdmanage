@@ -17,7 +17,7 @@ public class PmMainframeDaoTest extends BaseTest{
     @Test
     public void testFindMainframe() throws Exception {
         HashMap<String, Object> test = new HashMap<String, Object>();
-        test.put("mainframeID", "test");
+        test.put("mainframeID", "99883198960711e7a230c45444fb4cc1");
         ArrayList<PmMainframe> dbs = (ArrayList<PmMainframe>)pmMainframeDao.findMainframe(test);
         System.out.println(dbs.get(0));
     }
@@ -44,9 +44,10 @@ public class PmMainframeDaoTest extends BaseTest{
         test.setMainframeID("test");
         test.setMainframeName("test");
         test.setSystemInfo("test");
-        test.setSystemVersion("test");
         test.setIp("test");
         test.setPort(22);
+        test.setRootName("root");
+        test.setRootPwd("123456");
         pmMainframeDao.addMainframe(test);
     }
 

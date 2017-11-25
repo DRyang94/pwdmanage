@@ -10,7 +10,7 @@ import java.util.Map;
 public interface PmMainframeDao {
 
     /**
-     * 查找主机,参数可为数据库id，limit或其他
+     * 查找主机,参数可为数据库id，limit或其他属性
      * 若为空，返回所有
      *
      * @param map
@@ -48,6 +48,8 @@ public interface PmMainframeDao {
      * @return
      */
     int deleteMainframe(String id);
+
+
 
 
 }

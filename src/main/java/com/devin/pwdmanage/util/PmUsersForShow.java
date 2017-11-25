@@ -6,6 +6,32 @@ import com.devin.pwdmanage.entity.PmUser;
 
 public class PmUsersForShow {
 
+    public PmUsersForShow() {
+    }
+
+    public PmUsersForShow(String userID, String userName,
+                          String pwd, String remark, String state,
+                          String mainframeID, String mainframeName,
+                          String systemInfo, String dbID, String dbName,
+                          String dbInfo, String ip, int port,
+                          String rootName, String rootPwd) {
+        this.userID = userID;
+        this.userName = userName;
+        this.pwd = pwd;
+        this.remark = remark;
+        this.state = state;
+        this.mainframeID = mainframeID;
+        this.mainframeName = mainframeName;
+        this.systemInfo = systemInfo;
+        this.dbID = dbID;
+        this.dbName = dbName;
+        this.dbInfo = dbInfo;
+        this.ip = ip;
+        this.port = port;
+        this.rootName = rootName;
+        this.rootPwd = rootPwd;
+    }
+
     public PmUsersForShow(PmUser user, PmDatabase db, PmMainframe mf) {
         setUserID(user.getUserID());
         setUserName(user.getUserName());
@@ -16,16 +42,18 @@ public class PmUsersForShow {
             setDbID(db.getDbID());
             setDbInfo(db.getDbInfo());
             setDbName(db.getDbName());
-            setDbVersion(db.getDbVersion());
             setIp(db.getIp());
             setPort(db.getPort());
+            setRootName(db.getRootName());
+            setRootPwd(db.getRootPwd());
         } else {
             setMainframeID(mf.getMainframeID());
             setMainframeName(mf.getMainframeName());
             setSystemInfo(mf.getSystemInfo());
-            setSystemVersion(mf.getSystemVersion());
             setIp(mf.getIp());
             setPort(mf.getPort());
+            setRootPwd(mf.getRootPwd());
+            setRootName(mf.getRootName());
         }
     }
 
@@ -93,14 +121,6 @@ public class PmUsersForShow {
         this.systemInfo = systemInfo;
     }
 
-    public String getSystemVersion() {
-        return systemVersion;
-    }
-
-    public void setSystemVersion(String systemVersion) {
-        this.systemVersion = systemVersion;
-    }
-
     public String getDbID() {
         return dbID;
     }
@@ -125,13 +145,6 @@ public class PmUsersForShow {
         this.dbInfo = dbInfo;
     }
 
-    public String getDbVersion() {
-        return dbVersion;
-    }
-
-    public void setDbVersion(String dbVersion) {
-        this.dbVersion = dbVersion;
-    }
 
     public String getIp() {
         return ip;
@@ -165,19 +178,35 @@ public class PmUsersForShow {
 
     private String systemInfo;
 
-    private String systemVersion;
-
     private String dbID;
 
     private String dbName;
 
     private String dbInfo;
 
-    private String dbVersion;
-
     private String ip;
 
     private int port;
+
+    public String getRootPwd() {
+        return rootPwd;
+    }
+
+    public void setRootPwd(String rootPwd) {
+        this.rootPwd = rootPwd;
+    }
+
+    public String getRootName() {
+        return rootName;
+    }
+
+    public void setRootName(String rootName) {
+        this.rootName = rootName;
+    }
+
+    private String rootPwd;
+
+    private String rootName;
 
 
 }

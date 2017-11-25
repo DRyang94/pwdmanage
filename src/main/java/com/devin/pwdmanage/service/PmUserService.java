@@ -29,7 +29,7 @@ public interface PmUserService
      * @param user
      * @return
      */
-    int updateUser(PmUser user);
+    int updateUser(PmUsersForShow user);
 
     /**
      * 添加用户
@@ -37,7 +37,7 @@ public interface PmUserService
      * @param user
      * @return
      */
-    int addUser(PmUser user);
+    int addUser(PmUsersForShow user);
 
     /**
      * 删除用户
@@ -46,4 +46,13 @@ public interface PmUserService
      * @return
      */
     int deleteUser(String id);
+
+    /**
+     * 验证用户
+     *
+     * @param id
+     * @return
+     */
+    int verifyUser(List<PmUsersForShow> users);
+
 }

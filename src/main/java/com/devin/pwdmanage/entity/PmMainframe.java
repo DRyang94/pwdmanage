@@ -1,27 +1,47 @@
 package com.devin.pwdmanage.entity;
 
 public class PmMainframe {
+    public PmMainframe() {
+    }
+
     private String mainframeID;
     private String mainframeName;
 
-    private String systemInfo;
+    public PmMainframe(String mainframeID, String mainframeName, String systemInfo, String ip, int port, String rootName, String rootPwd) {
+        this.mainframeID = mainframeID;
+        this.mainframeName = mainframeName;
+        this.systemInfo = systemInfo;
+        this.ip = ip;
+        this.port = port;
+        this.rootName = rootName;
+        this.rootPwd = rootPwd;
+    }
 
-    private String systemVersion;
+    private String systemInfo;
 
     private String ip;
 
     private int port;
 
-    @Override
-    public String toString() {
-        return "PmMainframe{" +
-                "mainframeID='" + mainframeID + '\'' +
-                ", mainframeName='" + mainframeName + '\'' +
-                ", systemInfo='" + systemInfo + '\'' +
-                ", systemVersion='" + systemVersion + '\'' +
-                ", ip='" + ip + '\'' +
-                ", port=" + port +
-                '}';
+    private String rootName;
+
+    private String rootPwd;
+
+
+    public String getRootName() {
+        return rootName;
+    }
+
+    public void setRootName(String rootName) {
+        this.rootName = rootName;
+    }
+
+    public String getRootPwd() {
+        return rootPwd;
+    }
+
+    public void setRootPwd(String rootPwd) {
+        this.rootPwd = rootPwd;
     }
 
     public String getMainframeID() {
@@ -48,14 +68,6 @@ public class PmMainframe {
         this.systemInfo = systemInfo;
     }
 
-    public String getSystemVersion() {
-        return systemVersion;
-    }
-
-    public void setSystemVersion(String systemVersion) {
-        this.systemVersion = systemVersion;
-    }
-
     public String getIp() {
         return ip;
     }
@@ -73,5 +85,16 @@ public class PmMainframe {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "PmMainframe{" +
+                "mainframeID='" + mainframeID + '\'' +
+                ", mainframeName='" + mainframeName + '\'' +
+                ", systemInfo='" + systemInfo + '\'' +
+                ", ip='" + ip + '\'' +
+                ", port=" + port +
+                ", rootName='" + rootName + '\'' +
+                ", rootPwd='" + rootPwd + '\'' +
+                '}';
+    }
 }

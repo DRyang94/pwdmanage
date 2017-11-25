@@ -1,6 +1,19 @@
 package com.devin.pwdmanage.entity;
 
 public class PmUser {
+    public PmUser( ) {
+    }
+
+    public PmUser(String userID, String userName, String pwd, String mainframeID, String dbID, String remark, String state) {
+        this.userID = userID;
+        this.userName = userName;
+        this.pwd = pwd;
+        this.mainframeID = mainframeID;
+        this.dbID = dbID;
+        this.remark = remark;
+        this.state = state;
+    }
+
     public String getUserID() {
         return userID;
     }
