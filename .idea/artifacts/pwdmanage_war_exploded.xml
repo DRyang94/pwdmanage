@@ -56,6 +56,7 @@
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: org.json:json:20160810" />
           <element id="library" level="project" name="Maven: cn.songxinqiang:com.baidu.ueditor:1.1.2-edit-1.0" />
+          <element id="library" level="project" name="Maven: net.sourceforge.jexcelapi:jxl:2.6.12" />
         </element>
       </element>
       <element id="directory" name="META-INF">

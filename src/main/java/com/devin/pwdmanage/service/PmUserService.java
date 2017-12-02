@@ -48,9 +48,17 @@ public interface PmUserService
     int deleteUser(String id);
 
     /**
+     * 导入用户
+     *
+     * @param users
+     * @return
+     */
+    List<Boolean> importUser(List<PmUsersForShow> users);
+
+    /**
      * 验证用户
      *
-     * @param id
+     * @param users
      * @return
      */
     int verifyUser(List<PmUsersForShow> users);

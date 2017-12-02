@@ -50,8 +50,6 @@
     </servlet-mapping>
 
     <!--错误页面配置,这里只是简单的配置了一下
-    应用内并没有配置首页，但是请求默认路径即根路径的时候，由于没有对应的conntroller以及相应的静态资源，
-    会直接返回错误信息，这就是为什么可以直接回到main.jsp的原因。。。。日了狗
     -->
     <error-page>
         <error-code>404</error-code>

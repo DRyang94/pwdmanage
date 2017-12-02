@@ -187,13 +187,61 @@
                             "系统提示",
                             "数据删除失败！");
                     }
-
                     ;
                 },
                 error: function () {
                     $.messager.alert("ERROR！");
                 }
             });
+        }
+
+        function openImportDialog() {
+            $("#dlgForImport").dialog("open").dialog("setTitle", "导入用户信息");
+        }
+
+        function importUser() {
+            if($("#uploadExcel")[0].files[0] == null) {
+                $.messager.alert("系统提示", "请选择要上传的文件！");
+                return;
+            }
+            var formData = new FormData();
+            formData.append("file", $("#uploadExcel")[0].files[0]);
+            $.ajax({
+                url: url + "/upload",
+                type: 'POST',
+                cache: false,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    console.log(result);//打印服务端返回的数据
+                    if (result.resultCode == 200) {
+                        $.messager.alert("系统提示", "上传成功");
+                        $("#dlgForImport").dialog("close");
+                        $("#dg").datagrid("reload");
+                        $("#uploadExcel").val("");
+                    }
+                    else {
+                        $.messager.alert("系统提示", "上传失败");
+                        $("#dlgForImport").dialog("close");
+                        $("#uploadExcel").val("");
+                    }
+                },
+                error: function(result) {
+                    $.messager.alert("系统提示", "上传失败");
+                    $("#dlgForImport").dialog("close");
+                    $("#uploadExcel").val("");
+                }
+            });
+        }
+
+        function exportUser() {
+
+        }
+
+        function closeImportDialog() {
+            $("#dlgForImport").dialog("close");
+            $("#uploadExcel").val("");
         }
     </script>
 </head>
@@ -228,7 +276,12 @@
             href="javascript:deleteUser()" class="easyui-linkbutton"
             iconCls="icon-remove" plain="true">删除</a><a
             href="javascript:verifyUser()" class="easyui-linkbutton"
-            iconCls="icon-confirm" plain="true">验证</a>
+            iconCls="icon-ok" plain="true">验证</a><a
+            href="javascript:openImportDialog()" class="easyui-linkbutton"
+            iconCls="icon-ruku" plain="true">导入</a><a
+            href="javascript:exportUser()" class="easyui-linkbutton"
+            iconCls="icon-jcsjgl    " plain="true">导出</a>
+
     </div>
     <div>
         &nbsp;用户名：&nbsp;<input type="text" id="s_userName" size="20"
@@ -254,8 +307,8 @@
                 <td>主机类型：</td>
                 <td><select type="text" id="systemInfo" class="easyui-combobox"
                             name="systemInfo" style="width:120px;">
-                        <option value="aa">linux</option>
-                        <option>unix</option>
+                        <option value="linux">linux</option>
+                        <option value="unix">unix</option>
                     </select>&nbsp;<font
                         color="red">*</font>
                 </td>
@@ -311,9 +364,30 @@
 </div>
 
 <div id="dlg-buttons">
-<a href="javascript:saveUser()" class="easyui-linkbutton"
-   iconCls="icon-ok">保存</a> <a href="javascript:closeUserDialog()"
-                               class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+    <a href="javascript:saveUser()" class="easyui-linkbutton"
+       iconCls="icon-ok">保存</a> <a href="javascript:closeUserDialog()"
+                                   class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
 </div>
+
+<div id="dlgForImport" class="easyui-dialog"
+     style="width: 880px;height:300px;padding: 10px 20px" closed="true"
+     buttons="#dlgForImport-buttons">
+    <form id="uploadManage"  method="post" enctype="multipart/form-data">
+        选择文件：<input id="uploadExcel" name="uploadExcel" type="file" style="width:200px" data-options="prompt:'请选择文件...'">
+    </form>
+
+    <a href="<%=request.getScheme() + "://" + request.getServerName()
+    + ":" + request.getServerPort() + request.getContextPath()+ "/pmusers/template" %> "
+       title="下载模板" target="_blank" >下载模板</a>
+</div>
+
+<div id="dlgForImport-buttons">
+    <a href="javascript:importUser()" class="easyui-linkbutton"
+       iconCls="icon-ok">上传</a> <a href="javascript:closeImportDialog()"
+       class="easyui-linkbutton" iconCls="icon-cancel">关闭</a>
+
+</div>
+
+
 </body>
 </html>

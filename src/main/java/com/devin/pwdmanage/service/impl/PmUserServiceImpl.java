@@ -12,7 +12,6 @@ import com.devin.pwdmanage.util.PmUsersForShow;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -93,6 +92,17 @@ public class PmUserServiceImpl implements PmUserService {
         return pmUserDao.deleteUser(id);
     }
 
+    public List<Boolean> importUser(List<PmUsersForShow> users) {
+        List<Boolean> resultList = new ArrayList<Boolean>();
+        for(int i = 0; i < users.size(); i++) {
+            if(addUser(users.get(i)) == 0){
+                resultList.add(false);
+            }
+            resultList.add(true);
+        }
+        return resultList;
+    }
+
     public int verifyUser(List<PmUsersForShow> users) {
         if(users.get(0).getMainframeID() != null) {
 
@@ -110,6 +120,8 @@ public class PmUserServiceImpl implements PmUserService {
         HashMap<String, Object> param = new HashMap<String, Object>();
         param.put("ip", user.getIp());
         param.put("port", user.getPort());
+        param.put("rootName", user.getRootName());
+        param.put("rootPwd", user.getRootPwd());
         if(user.getMainframeName() != null ) {
             param.put("mainframeName", user.getMainframeName());
             param.put("systemInfo", user.getSystemInfo());
