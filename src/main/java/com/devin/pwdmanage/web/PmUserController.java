@@ -3,16 +3,14 @@ package com.devin.pwdmanage.web;
 
 import com.devin.pwdmanage.dto.Result;
 import com.devin.pwdmanage.entity.PageBean;
-import com.devin.pwdmanage.entity.PmUser;
-import com.devin.pwdmanage.entity.SysRole;
-import com.devin.pwdmanage.entity.SysUser;
-import com.devin.pwdmanage.service.PmMainframeService;
 import com.devin.pwdmanage.service.PmUserService;
-import com.devin.pwdmanage.service.SysUserService;
 import com.devin.pwdmanage.util.*;
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
@@ -26,10 +24,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.*;
 
 
@@ -148,7 +143,7 @@ public class PmUserController {
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public Result list(@RequestParam("file") CommonsMultipartFile uploadExcel,
+    public Result importUser(@RequestParam("file") CommonsMultipartFile uploadExcel,
             HttpServletResponse response, HttpServletRequest request) throws Exception {
         String fileName;
         InputStream fileContent;
@@ -164,19 +159,35 @@ public class PmUserController {
         List<PmUsersForShow> userList = new ArrayList<PmUsersForShow>();
         //line 0 has not data
         for(int i = 1; i < rows;i++) {
-            userList.add(new PmUsersForShow(ColumnGenerator.getUUID(),
-                    String.valueOf(sheet.getCell(3, i).getContents()),
-                    String.valueOf(sheet.getCell(4, i).getContents()),
-                    String.valueOf(sheet.getCell(5, i).getContents()),
-                    null, null,
-                    String.valueOf(sheet.getCell(6, i).getContents()),
-                    String.   valueOf(sheet.getCell(0, i).getContents()),
-                    null, null, null,
-                    String.valueOf(sheet.getCell(1, i).getContents()),
-                    Integer.valueOf(sheet.getCell(2, i).getContents()),
-                    String.valueOf(sheet.getCell(7, i).getContents()),
-                    String.valueOf(sheet.getCell(8, i).getContents())));
+            PmUsersForShow userForShow = new PmUsersForShow(
+                    ColumnGenerator.getUUID(),
+                    sheet.getCell(3, i).getContents(), sheet.getCell(4, i).getContents(),
+                    sheet.getCell(5, i).getContents(), null, null,
+                    null, null, null, null, null,
+                    sheet.getCell(1, i).getContents(), Integer.valueOf(sheet.getCell(2, i).getContents()),
+                    sheet.getCell(7, i).getContents(), sheet.getCell(8, i).getContents()
+            );
+            if(request.getHeader("Referer").matches(".*mainframe.*")) {
+                userForShow.setMainframeName(sheet.getCell(6, i).getContents());
+                userForShow.setSystemInfo(sheet.getCell(0, i).getContents());
+            } else {
+                userForShow.setDbName(sheet.getCell(6, i).getContents());
+                userForShow.setDbInfo(sheet.getCell(0, i).getContents());
+            }
+//            userList.add(new PmUsersForShow(ColumnGenerator.getUUID(),
+//                    String.valueOf(sheet.getCell(3, i).getContents()),
+//                    String.valueOf(sheet.getCell(4, i).getContents()),
+//                    String.valueOf(sheet.getCell(5, i).getContents()),
+//                    null, null,
+//                    String.valueOf(sheet.getCell(6, i).getContents()),
+//                    String.   valueOf(sheet.getCell(0, i).getContents()),
+//                    null, null, null,
+//                    String.valueOf(sheet.getCell(1, i).getContents()),
+//                    Integer.valueOf(sheet.getCell(2, i).getContents()),
+//                    String.valueOf(sheet.getCell(7, i).getContents()),
+//                    String.valueOf(sheet.getCell(8, i).getContents())));
         }
+        workbook.close();
         fileContent.close();
         List<Boolean> resultList = pmUserService.importUser(userList);
         if(resultList.contains(true)){
@@ -202,8 +213,73 @@ public class PmUserController {
         InputStream is = new FileInputStream(file);
         body = new byte[is.available()];
         is.read(body);
+        is.close();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", "attchement;filename=" + file.getName());
+        HttpStatus statusCode = HttpStatus.OK;
+        ResponseEntity<byte[]> entity = new ResponseEntity<byte[]>(body, headers, statusCode);
+        return entity;
+    }
+
+    /**
+     * 导出
+     *
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/export/{ids}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<byte[]> exportUser(@PathVariable(value = "ids") String ids,
+                                             HttpServletRequest request) throws Exception {
+        List<String> idList = Arrays.asList( ids.split(","));
+        List<PmUsersForShow> userList = pmUserService.exportUser((idList));
+        File templateFile;
+        File exportFile = new File(request.getServletContext().getRealPath("/") +
+                "resources/files/export.xls");
+        int flag;
+        if(request.getHeader("Referer").matches(".*mainframe.*")) {
+            templateFile = new File(request.getServletContext().getRealPath("/") +
+                    "resources/files/template1.xls");
+            flag = 0;
+        } else {
+            templateFile = new File(request.getServletContext().getRealPath("/") +
+                    "resources/files/template2.xls");
+            flag = 1;
+        }
+        FileUtil.CopyByChannel(templateFile, exportFile);
+        InputStream templateInput = new FileInputStream(exportFile);
+        Workbook book = Workbook.getWorkbook(templateInput);
+        WritableWorkbook workbook = Workbook.createWorkbook(exportFile, book);
+        book.close();
+        WritableSheet sheet = workbook.getSheet(0);
+        for(int i = 1; i < userList.size() + 1; i++){
+            int j = i - 1;
+            sheet.addCell(new Label(1,i,userList.get(j).getIp()));
+            sheet.addCell(new Label(2,i,String.valueOf(userList.get(j).getPort())));
+            sheet.addCell(new Label(3,i,userList.get(j).getUserName()));
+            sheet.addCell(new Label(4,i,userList.get(j).getPwd()));
+            sheet.addCell(new Label(5,i,userList.get(j).getRemark()));
+            sheet.addCell(new Label(7,i,userList.get(j).getRootName()));
+            sheet.addCell(new Label(8,i,userList.get(j).getRootPwd()));
+            if(flag == 0) {
+                sheet.addCell(new Label(0,i,userList.get(j).getSystemInfo()));
+                sheet.addCell(new Label(6,i,userList.get(j).getMainframeName()));
+            } else {
+                sheet.addCell(new Label(0,i,userList.get(j).getDbInfo()));
+                sheet.addCell(new Label(6,i,userList.get(j).getDbName()));
+            }
+        }
+        workbook.write();
+        workbook.close();
+        InputStream fileInput = new FileInputStream(exportFile);
+        byte[] body = null;
+        body = new byte[fileInput.available()];
+        fileInput.read(body);
+        fileInput.close();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", "attchement;filename=" + exportFile.getName());
+        exportFile.delete();
         HttpStatus statusCode = HttpStatus.OK;
         ResponseEntity<byte[]> entity = new ResponseEntity<byte[]>(body, headers, statusCode);
         return entity;

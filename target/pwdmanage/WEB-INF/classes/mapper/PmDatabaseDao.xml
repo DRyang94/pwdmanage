@@ -33,6 +33,12 @@
             <if test="port!=null and port!='' ">
                 and PORT like #{port}
             </if>
+            <if test="rootName!=null and rootName!='' ">
+                and ROOT_NAME like #{rootName}
+            </if>
+            <if test="rootPwd!=null and rootPwd!='' ">
+                and ROOT_PWD like #{rootPwd}
+            </if>
         </where>
         <if test="start!=null and size!=null">
             limit #{start},#{size}

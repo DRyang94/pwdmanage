@@ -18,6 +18,9 @@
         select USER_ID,USERNAME,PWD,MAINFRAME_ID,DATABASE_ID,REMARK,STATE from
         pm_user
         <where>
+            <if test="userID!=null and userID!='' ">
+                and USER_ID like #{userID}
+            </if>
             <if test="userName!=null and userName!='' ">
                 and USERNAME like #{userName}
             </if>

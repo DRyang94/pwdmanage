@@ -56,6 +56,14 @@ public interface PmUserService
     List<Boolean> importUser(List<PmUsersForShow> users);
 
     /**
+     * 导出用户
+     *
+     * @param idList
+     * @return
+     */
+    List<PmUsersForShow> exportUser(List<String> idList);
+
+    /**
      * 验证用户
      *
      * @param users

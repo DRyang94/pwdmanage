@@ -236,7 +236,22 @@
         }
 
         function exportUser() {
-
+            var selectedRows = $("#dg").datagrid('getSelections');
+            if (selectedRows.length == 0) {
+                $.messager.alert("系统提示", "请选择要导出的数据！");
+                return;
+            }
+            var strIds = [];
+            for (var i = 0; i < selectedRows.length; i++) {
+                strIds.push(selectedRows[i].userID);
+            }
+            var ids = strIds.join(",");
+            $.messager.confirm("系统提示", "您确认要导出这<font color=red>"
+                + selectedRows.length + "</font>条数据吗？", function (r) {
+                if (r) {
+                    $('<form method="get" action="/pwdmanage/pmusers/export/' + ids + '"/>').appendTo('body').submit().remove();
+                }
+            });
         }
 
         function closeImportDialog() {

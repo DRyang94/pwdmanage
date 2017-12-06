@@ -103,6 +103,38 @@ public class PmUserServiceImpl implements PmUserService {
         return resultList;
     }
 
+    public List<PmUsersForShow> exportUser(List<String> idList) {
+        List<PmUser> userList = new ArrayList<PmUser>();
+        HashMap<String, Object> param = new HashMap<String, Object>();
+        for (String id: idList) {
+            param.put("userID", id);
+            userList.addAll(pmUserDao.findUsers(param));
+            param.clear();
+        }
+        if(userList.size() == 0) return null;
+        List<PmUsersForShow> showList = new ArrayList<PmUsersForShow>();
+        if(userList.get(0).getMainframeID() != null) {
+            for(PmUser user: userList) {
+                param.put("mainframeID", user.getMainframeID());
+                List<PmMainframe> mf = pmMainframeDao.findMainframe(param);
+                if(mf.size() > 0) {
+                    showList.add(new PmUsersForShow(user, null, mf.get(0)));
+                }
+                param.remove("mainframeID");
+            }
+        } else {
+            for(PmUser user: userList) {
+                    param.put("dbID", user.getDbID());
+                    List<PmDatabase> db = pmDatabaseDao.findDB(param);
+                    if(db.size() > 0) {
+                        showList.add(new PmUsersForShow(user, db.get(0), null));
+                    }
+                    param.remove("dbID");
+            }
+        }
+        return showList;
+    }
+
     public int verifyUser(List<PmUsersForShow> users) {
         if(users.get(0).getMainframeID() != null) {
 
