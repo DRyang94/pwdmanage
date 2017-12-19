@@ -348,7 +348,7 @@
                     <input type="hidden" id="mainframeID" value="0">
                 </td>
                 <td>密码：</td>
-                <td><input type="text" id="password" name="password"
+                <td><input type="password" id="password" name="password"
                            class="easyui-validatebox" required="true"/>&nbsp;<font
                         color="red">*</font>
                 </td>
@@ -368,7 +368,7 @@
                            placeholder="新增主机时需要"/>&nbsp;
                 </td>
                 <td id="rP">主机管理员密码：</td>
-                <td><input type="text" id="rootPwd" name="rootPwd"
+                <td><input type="password" id="rootPwd" name="rootPwd"
                            class="easyui-validatebox" required="false"
                            placeholder="新增主机时需要"/>&nbsp;
                 </td>

@@ -101,7 +101,7 @@
              data-options="selected:true,iconCls:'icon-wenzhangs'"
              style="padding: 10px;height:10px;">
             <a
-                    href="javascript:openTab(' 数据库用户管理','dbManage.jsp','icon-wenzhang')"
+                    href="javascript:openTab(' 数据库用户管理','databaseManage.jsp','icon-wenzhang')"
                     class="easyui-linkbutton"
                     data-options="plain:true,iconCls:'icon-wenzhang'"
                     style="width: 150px;"> 数据库用户管理</a>

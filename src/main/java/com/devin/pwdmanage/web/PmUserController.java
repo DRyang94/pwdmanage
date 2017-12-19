@@ -3,9 +3,9 @@ package com.devin.pwdmanage.web;
 
 import com.devin.pwdmanage.dto.Result;
 import com.devin.pwdmanage.entity.PageBean;
+import com.devin.pwdmanage.entity.PmUser;
 import com.devin.pwdmanage.service.PmUserService;
 import com.devin.pwdmanage.util.*;
-import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.write.Label;
@@ -65,6 +65,9 @@ public class PmUserController {
         }
         List<PmUsersForShow> userList = pmUserService.findUsers(map);
         Long total = pmUserService.getTotalUser(map);
+        for(PmUsersForShow user: userList) {
+            user.setPwd(user.getPwd().charAt(0) + "*****");
+        }
         JsonConfig config = new JsonConfig();
         config.setIgnoreDefaultExcludes(false);
         config.registerJsonValueProcessor(java.util.Date.class,
@@ -123,16 +126,57 @@ public class PmUserController {
      */
     @RequestMapping(value = "/{ids}", method = RequestMethod.DELETE)
     @ResponseBody
-    public Result delete(@PathVariable(value = "ids") String ids) throws Exception {
+    public Result delete(@PathVariable(value = "ids") String ids, HttpServletRequest request) throws Exception {
+        String category;
+        if(request.getHeader("Referer").matches(".*mainframe.*")) {
+            category = new String("mainframe");
+        } else {
+            category = new String("database");
+        }
     //同时删除20位以上的用户（超过最大值了）
         if (ids.length() > 20 * 32) {
             return ResultGenerator.genFailResult("ERROR");
         }
+        int result = 0;
         String[] idsStr = ids.split(",");
         for (int i = 0; i < idsStr.length; i++) {
-            pmUserService.deleteUser((idsStr[i]));
+            result += pmUserService.deleteUser((idsStr[i]), category);
         }
-        return ResultGenerator.genSuccessResult();
+        if(result > 0) {
+            return ResultGenerator.genSuccessResult();
+        }
+        else{
+            return ResultGenerator.genFailResult("fail");
+        }
+    }
+
+    /**
+     * 验证
+     *
+     * @param ids
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/verify/{ids}", method = RequestMethod.GET)
+    @ResponseBody
+    public Result verify(@PathVariable(value = "ids") String ids,HttpServletRequest request) throws Exception {
+        String category;
+        if(request.getHeader("Referer").matches(".*mainframe.*")) {
+            category = new String("mainframe");
+        } else {
+            category = new String("database");
+        }
+        int result = 0;
+        String[] idsStr = ids.split(",");
+        for (int i = 0; i < idsStr.length; i++) {
+            result += pmUserService.verifyUser((idsStr[i]), category);
+        }
+        if(result > 0) {
+            return ResultGenerator.genSuccessResult();
+        }
+        else{
+            return ResultGenerator.genFailResult("fail");
+        }
     }
 
     /**
@@ -174,19 +218,8 @@ public class PmUserController {
                 userForShow.setDbName(sheet.getCell(6, i).getContents());
                 userForShow.setDbInfo(sheet.getCell(0, i).getContents());
             }
-//            userList.add(new PmUsersForShow(ColumnGenerator.getUUID(),
-//                    String.valueOf(sheet.getCell(3, i).getContents()),
-//                    String.valueOf(sheet.getCell(4, i).getContents()),
-//                    String.valueOf(sheet.getCell(5, i).getContents()),
-//                    null, null,
-//                    String.valueOf(sheet.getCell(6, i).getContents()),
-//                    String.   valueOf(sheet.getCell(0, i).getContents()),
-//                    null, null, null,
-//                    String.valueOf(sheet.getCell(1, i).getContents()),
-//                    Integer.valueOf(sheet.getCell(2, i).getContents()),
-//                    String.valueOf(sheet.getCell(7, i).getContents()),
-//                    String.valueOf(sheet.getCell(8, i).getContents())));
-        }
+            userList.add(userForShow);
+       }
         workbook.close();
         fileContent.close();
         List<Boolean> resultList = pmUserService.importUser(userList);

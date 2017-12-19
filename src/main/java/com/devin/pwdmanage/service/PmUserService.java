@@ -43,9 +43,10 @@ public interface PmUserService
      * 删除用户
      *
      * @param id
+     * @param category
      * @return
      */
-    int deleteUser(String id);
+    int deleteUser(String id, String category);
 
     /**
      * 导入用户
@@ -66,9 +67,10 @@ public interface PmUserService
     /**
      * 验证用户
      *
-     * @param users
+     * @param id
+     * @param category
      * @return
      */
-    int verifyUser(List<PmUsersForShow> users);
+    int verifyUser(String id, String category);
 
 }

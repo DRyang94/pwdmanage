@@ -8,6 +8,7 @@ import com.devin.pwdmanage.entity.PmMainframe;
 import com.devin.pwdmanage.entity.PmUser;
 import com.devin.pwdmanage.service.PmUserService;
 import com.devin.pwdmanage.util.ColumnGenerator;
+import com.devin.pwdmanage.util.DatabaseHelper;
 import com.devin.pwdmanage.util.PmUsersForShow;
 import org.springframework.stereotype.Service;
 
@@ -40,7 +41,7 @@ public class PmUserServiceImpl implements PmUserService {
                 if(user.getMainframeID()!=null) {
                     param.put("mainframeID", user.getMainframeID());
                     param.put("mainframeName", map.get("mainframeName"));
-                    user.setPwd(user.getPwd().charAt(0) + "******");
+//                    user.setPwd(user.getPwd().charAt(0) + "******");
                     List<PmMainframe> mf = pmMainframeDao.findMainframe(param);
                     if(mf.size() > 0) {
                         showList.add(new PmUsersForShow(user, null, mf.get(0)));
@@ -54,7 +55,7 @@ public class PmUserServiceImpl implements PmUserService {
                 if(user.getDbID()!=null) {
                     param.put("dbID", user.getDbID());
                     param.put("dbName", map.get("dbName"));
-                    user.setPwd(user.getPwd().charAt(0) + "******");
+//                    user.setPwd(user.getPwd().charAt(0) + "******");
                     List<PmDatabase> db = pmDatabaseDao.findDB(param);
                     if(db.size() > 0) {
                         showList.add(new PmUsersForShow(user, db.get(0), null));
@@ -69,11 +70,41 @@ public class PmUserServiceImpl implements PmUserService {
 
     public int updateUser(PmUsersForShow user) {
         //跟add操作差不多，要先看输入的主机或者数据库信息是否有效
-        if (user.getUserName() == null || user.getPwd() == null) {
+        if (user.getUserID() == null ) {
             return 0;
         }
         PmUser pmUser = checkMfDBExist(user);
-        return pmUserDao.updateUser(pmUser);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("userID", pmUser.getUserID());
+        if(pmUser.getMainframeID() != null) {
+            map.put("category", "mainframe");
+        }else {
+            map.put("category", "database");
+        }
+        List<PmUsersForShow> userList = findUsers(map);
+        if(userList.size() == 0) {
+            return 0;
+        }
+        if(pmUser.getPwd() == null) {
+            pmUser.setPwd(userList.get(0).getPwd());
+            user.setPwd(userList.get(0).getPwd());
+        }
+        int result = 0;
+        String oldName = null;
+        if(user.getUserName() != userList.get(0).getUserName()) {
+            oldName = userList.get(0).getUserName();
+        }
+        if(user.getMainframeID() != null) {
+
+        }
+        else {
+            //如果只是状态改变，不需要连接到主机
+            if (userList.get(0).getState() == user.getState() ||
+                    DatabaseHelper.updateUser(user, oldName) != -1) {
+                result = pmUserDao.updateUser(pmUser);
+            }
+        }
+        return result;
     }
 
     public Long getTotalUser(Map<String, Object> map) {
@@ -85,11 +116,36 @@ public class PmUserServiceImpl implements PmUserService {
             return 0;
         }
         PmUser pmUser = checkMfDBExist(user);
-        return pmUserDao.addUser(pmUser);
+        int result = 0;
+        if(user.getMainframeID() != null) {
+
+        }
+        else {
+            if (DatabaseHelper.addUser(user) != -1) {
+                result = pmUserDao.addUser(pmUser);
+            }
+        }
+        return result;
     }
 
-    public int deleteUser(String id) {
-        return pmUserDao.deleteUser(id);
+    public int deleteUser(String id, String category) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("userID", id);
+        map.put("category", category);
+        List<PmUsersForShow> userList = findUsers(map);
+        if (userList.size() == 0) {
+            return 0;
+        }
+        int result = 0;
+        if(userList.get(0).getMainframeID() != null) {
+
+        }
+        else {
+            if (DatabaseHelper.deleteUser(userList.get(0)) != -1) {
+                result = pmUserDao.deleteUser(id);
+            }
+        }
+        return result;
     }
 
     public List<Boolean> importUser(List<PmUsersForShow> users) {
@@ -135,14 +191,26 @@ public class PmUserServiceImpl implements PmUserService {
         return showList;
     }
 
-    public int verifyUser(List<PmUsersForShow> users) {
-        if(users.get(0).getMainframeID() != null) {
+    public int verifyUser(String id, String category) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("userID", id);
+        map.put("category", category);
+        List<PmUsersForShow> userList = findUsers(map);
+        if (userList.size() == 0) {
+            return 0;
+        }
+        if(userList.get(0).getMainframeID() != null) {
 
         } else {
-
+            if (DatabaseHelper.verifyUser(userList.get(0))) {
+                userList.get(0).setState("正常");
+            } else {
+                userList.get(0).setState("已过期");
+            }
 
         }
-        return 0;
+        updateUser(userList.get(0));
+        return 1;
     }
 
     //处理查询主机和数据库是否存在，并把PmUser分离出
@@ -160,6 +228,8 @@ public class PmUserServiceImpl implements PmUserService {
             List<PmMainframe> mfList = pmMainframeDao.findMainframe(param);
             if(mfList.size() > 0) {
                 user.setMainframeID(mfList.get(0).getMainframeID());
+                user.setRootName(mfList.get(0).getRootName());
+                user.setRootPwd(mfList.get(0).getRootPwd());
             } else {
                 user.setMainframeID(ColumnGenerator.getUUID());
                 PmMainframe newMf = new PmMainframe(user.getMainframeID(),
@@ -175,6 +245,8 @@ public class PmUserServiceImpl implements PmUserService {
             List<PmDatabase> dbList = pmDatabaseDao.findDB(param);
             if(dbList.size() > 0) {
                 user.setDbID(dbList.get(0).getDbID());
+                user.setRootName(dbList.get(0).getRootName());
+                user.setRootPwd(dbList.get(0).getRootPwd());
             } else {
                 user.setDbID(ColumnGenerator.getUUID());
                 PmDatabase newDb = new PmDatabase(user.getDbID(),
