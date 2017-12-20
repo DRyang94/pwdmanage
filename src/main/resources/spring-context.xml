@@ -9,8 +9,8 @@
     <context:component-scan base-package="com.devin.pwdmanage.dao"/>
     <context:component-scan base-package="com.devin.pwdmanage.service"/>
 
-    <!-- druid监控配置 -->
-    <import resource="classpath:spring-context-druid-stat.xml"/>
+    <!--&lt;!&ndash; druid监控配置 &ndash;&gt;-->
+    <!--<import resource="classpath:spring-context-druid-stat.xml"/>-->
     <!-- 事务管理配置 -->
     <import resource="classpath:spring-context-tx.xml"/>
 

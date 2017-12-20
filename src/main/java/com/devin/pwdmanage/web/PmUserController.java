@@ -162,9 +162,9 @@ public class PmUserController {
     public Result verify(@PathVariable(value = "ids") String ids,HttpServletRequest request) throws Exception {
         String category;
         if(request.getHeader("Referer").matches(".*mainframe.*")) {
-            category = new String("mainframe");
+            category = "mainframe";
         } else {
-            category = new String("database");
+            category = "database";
         }
         int result = 0;
         String[] idsStr = ids.split(",");

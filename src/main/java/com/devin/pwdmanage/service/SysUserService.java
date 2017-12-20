@@ -14,7 +14,7 @@ public interface SysUserService {
      * @param user
      * @return
      */
-    SysUser login(SysUser user);
+    SysUser login(SysUser user, String ip);
 
     /**
      * 查询用户角色

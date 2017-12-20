@@ -1,22 +1,53 @@
 package com.devin.pwdmanage.util;
 
 import com.devin.pwdmanage.BaseTest;
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.Session;
-import com.jcraft.jsch.UserInfo;
 import org.junit.Test;
+import sun.applet.Main;
 
 public class MainframeHelperTest extends BaseTest{
-    private static  String USER="root";
-    private static  String PASSWORD="Scut654123";
-    private static  String  HOST="39.108.152.133";
-    private static  int  DEFAULT_SSH_PORT = 22;
+
 
     @Test
-    public void test() throws Exception {
-        MainframeHelper.testLogin(null);
+    public void testVerify() throws Exception {
+        PmUsersForShow user = new PmUsersForShow(
+                null, "test", "password", null, null,
+                null, null, null, null, null,
+                null, "39.108.152.133", 22, "root", "Scut654123"
+        );
+        boolean result = MainframeHelper.verifyUser(user);
+        System.out.println(result);
+    }
 
+    @Test
+    public void testAdd() throws Exception {
+        PmUsersForShow user = new PmUsersForShow(
+                null, "test2", "password", null, null,
+                null, null, null, null, null,
+                null, "39.108.152.133", 22, "root", "Scut654123"
+        );
+        boolean result = MainframeHelper.addUser(user);
+        System.out.println(result);
+    }
 
+    @Test
+    public void testUpdate() throws Exception {
+        PmUsersForShow user = new PmUsersForShow(
+                null, "test2", "123456", null, null,
+                null, null, null, null, null,
+                null, "39.108.152.133", 22, "root", "Scut654123"
+        );
+        boolean result = MainframeHelper.updateUser(user, null);
+        System.out.println(result);
+    }
+
+    @Test
+    public void testDelete() throws Exception {
+        PmUsersForShow user = new PmUsersForShow(
+                null, "test2", "123456", null, null,
+                null, null, null, null, "pwdmanage",
+                "mysql", "localhost", 3306, "root", "d123456"
+        );
+        boolean result = MainframeHelper.deleteUser(user);
+        System.out.println(result);
     }
 }

@@ -38,7 +38,7 @@
 <div class="middle-box text-center loginscreen  animated fadeInDown">
     <div>
         <div>
-            <h1 class="logo-name">FUCK THE COURSE</h1>
+            <h1 class="logo-name"> 统一 密码 管理</h1>
         </div>
         <h3>欢迎使用 密码管理系统</h3>
         <form class="m-t" role="form" id="adminlogin" method="post"

@@ -169,23 +169,23 @@
             }
             var ids = strIds.join(",");
             $.ajax({
-                type: "VERIFY",//方法类型
+                type: "get",//方法类型
                 dataType: "json",//预期服务器返回的数据类型
-                url: "/pwdmanage/pmusers/" + ids,//url
+                url: "/pwdmanage/pmusers/verify/" + ids,//url
                 data: {},
                 success: function (result) {
                     console.log(result);//打印服务端返回的数据
                     if (result.resultCode == 200) {
                         $.messager.alert(
                             "系统提示",
-                            "数据已成功删除！");
+                            "验证完成，状态已更新！");
                         $("#dg").datagrid(
                             "reload");
                     }
                     else {
                         $.messager.alert(
                             "系统提示",
-                            "数据删除失败！");
+                            "验证失败！");
                     }
                     ;
                 },

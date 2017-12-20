@@ -152,7 +152,7 @@
         <th field="pwd" width="30" align="center">密码(加密后)</th>
         <th field="createTime" width="20" align="center">创建时间</th>
         <th field="remark" width="20" align="center">备注</th>
-        <th field="state" width="20" align="center">状态</th>
+        <th field="role" width="20" align="center">角色</th>
     </tr>
     </thead>
 </table>

@@ -9,8 +9,12 @@ import com.devin.pwdmanage.entity.PmUser;
 import com.devin.pwdmanage.service.PmUserService;
 import com.devin.pwdmanage.util.ColumnGenerator;
 import com.devin.pwdmanage.util.DatabaseHelper;
+import com.devin.pwdmanage.util.MainframeHelper;
 import com.devin.pwdmanage.util.PmUsersForShow;
+import org.apache.log4j.Logger;
+import org.apache.log4j.MDC;
 import org.springframework.stereotype.Service;
+import sun.applet.Main;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -23,6 +27,7 @@ public class PmUserServiceImpl implements PmUserService {
 
     @Resource
     private PmUserDao pmUserDao;
+    private Logger logger = Logger.getLogger(this.getClass());
 
     @Resource
     private PmMainframeDao pmMainframeDao;
@@ -65,6 +70,9 @@ public class PmUserServiceImpl implements PmUserService {
                 }
             }
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "getAll");
+        logger.info("");
         return showList;
     }
 
@@ -95,11 +103,15 @@ public class PmUserServiceImpl implements PmUserService {
             oldName = userList.get(0).getUserName();
         }
         if(user.getMainframeID() != null) {
-
+            //如果只是状态改变，不需要连接到主机
+            if (!(userList.get(0).getState() != null && (userList.get(0).getState().equals(user.getState()))) ||
+                    MainframeHelper.updateUser(user, oldName)) {
+                result = pmUserDao.updateUser(pmUser);
+            }
         }
         else {
             //如果只是状态改变，不需要连接到主机
-            if (userList.get(0).getState() == user.getState() ||
+            if (!(userList.get(0).getState() != null && (userList.get(0).getState().equals(user.getState()))) ||
                     DatabaseHelper.updateUser(user, oldName) != -1) {
                 result = pmUserDao.updateUser(pmUser);
             }
@@ -118,7 +130,9 @@ public class PmUserServiceImpl implements PmUserService {
         PmUser pmUser = checkMfDBExist(user);
         int result = 0;
         if(user.getMainframeID() != null) {
-
+            if(MainframeHelper.addUser(user)) {
+                result = pmUserDao.addUser(pmUser);
+            }
         }
         else {
             if (DatabaseHelper.addUser(user) != -1) {
@@ -138,7 +152,9 @@ public class PmUserServiceImpl implements PmUserService {
         }
         int result = 0;
         if(userList.get(0).getMainframeID() != null) {
-
+            if (MainframeHelper.deleteUser(userList.get(0))) {
+                result = pmUserDao.deleteUser(id);
+            }
         }
         else {
             if (DatabaseHelper.deleteUser(userList.get(0)) != -1) {
@@ -200,7 +216,11 @@ public class PmUserServiceImpl implements PmUserService {
             return 0;
         }
         if(userList.get(0).getMainframeID() != null) {
-
+            if (MainframeHelper.verifyUser(userList.get(0))) {
+                userList.get(0).setState("正常");
+            } else {
+                userList.get(0).setState("已过期");
+            }
         } else {
             if (DatabaseHelper.verifyUser(userList.get(0))) {
                 userList.get(0).setState("正常");

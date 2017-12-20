@@ -89,7 +89,7 @@
     <div class="easyui-tabs" fit="true" border="false" id="tabs">
         <div title="首页" data-options="iconCls:'icon-home'">
             <div align="center" style="padding-top: 50px">
-                <font color="grey" size="10">fuck the course</font>
+                <font color="grey" size="10">统一密码管理</font>
             </div>
         </div>
     </div>

@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
+import org.apache.log4j.MDC;
+
 
 @Service
 public class SysUserServiceImpl implements SysUserService {
@@ -20,8 +22,10 @@ public class SysUserServiceImpl implements SysUserService {
     @Resource
     private SysURRelationDao sysURRelationDao;
 
-    public SysUser login(SysUser user) {
-        return sysUserDao.login(user);
+    public SysUser login(SysUser user, String ip) {
+        SysUser result = sysUserDao.login(user);
+
+        return result;
     }
 
     public SysRole getRoleByUser(SysUser user) {return sysURRelationDao.getRoleByUser(user);}

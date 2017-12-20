@@ -33,6 +33,12 @@
             <if test="state!=null and state!='' ">
                 and STATE like #{state}
             </if>
+            <if test="category != null and category=='database' ">
+                and MAINFRAME_ID is NULL
+            </if>
+            <if test="category != null and category=='mainframe' ">
+                and DATABASE_ID is NULL
+            </if>
         </where>
         <if test="start!=null and size!=null">
             limit #{start},#{size}
