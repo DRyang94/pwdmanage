@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.devin.pwdmanage.dao.SysUserDao">
+    <!-- 目的：为dao接口方法提供sql语句配置 -->
+    <resultMap type="SysUser" id="UserResult">
+        <result property="userID" column="USER_ID"/>
+        <result property="roleID" column="ROLE_ID"/>
+        <result property="userName" column="USERNAME"/>
+        <result property="pwd" column="PWD"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="remark" column="REMARK"/>
+        <result property="state" column="STATE"/>
+    </resultMap>
+
+    <select id="login" parameterType="SysUser" resultMap="UserResult">
+        select USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
+        sys_user where USERNAME=#{userName} and PWD=#{pwd} limit 1
+    </select>
+
+    <select id="findUsers" parameterType="java.util.Map" resultMap="UserResult">
+        select USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
+        sys_user
+        <where>
+            <if test="userName!=null and userName!='' ">
+                and USERNAME like #{userName}
+            </if>
+        </where>
+        <if test="start!=null and size!=null">
+            limit #{start},#{size}
+        </if>
+    </select>
+
+    <select id="getTotalUser" parameterType="java.util.Map" resultType="java.lang.Long">
+        select count(*) from sys_user
+        <where>
+            <if test="userName!=null and userName!='' ">
+                and USERNAME like #{userName}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addUser" parameterType="SysUser">
+        insert into sys_user(USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE)
+        values(#{userID},#{roleID},#{userName},#{pwd},#{createTime},#{remark},#{state})
+    </insert>
+
+    <update id="updateUser" parameterType="SysUser">
+        update sys_user
+        <set>
+            <if test="userName!=null and userName!='' ">
+                USERNAME=#{userName}
+            </if>
+            <if test="pwd!=null and pwd!='' ">
+                ,PWD=#{pwd}
+            </if>
+            <if test="createTime!=null and createTime!='' ">
+                ,CREATE_TIME=#{createTime}
+            </if>
+            <if test="remark!=null and remark!='' ">
+                ,REMARK=#{remark}
+            </if>
+            <if test="state!=null and state!='' ">
+                ,STATE=#{state}
+            </if>
+        </set>
+        where USER_ID=#{userID}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete from sys_user
+        where USER_ID=#{id}
+    </delete>
+
+
+</mapper>
