@@ -116,10 +116,16 @@ public class PmUserServiceImpl implements PmUserService {
                 result = pmUserDao.updateUser(pmUser);
             }
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "update " + user.getUserName());
+        logger.info("");
         return result;
     }
 
     public Long getTotalUser(Map<String, Object> map) {
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "get the num of users ");
+        logger.info("");
         return pmUserDao.getTotalUser(map);
     }
 
@@ -139,6 +145,9 @@ public class PmUserServiceImpl implements PmUserService {
                 result = pmUserDao.addUser(pmUser);
             }
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "add " + user.getUserName());
+        logger.info("");
         return result;
     }
 
@@ -161,6 +170,9 @@ public class PmUserServiceImpl implements PmUserService {
                 result = pmUserDao.deleteUser(id);
             }
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "delete " + id);
+        logger.info("");
         return result;
     }
 
@@ -172,6 +184,9 @@ public class PmUserServiceImpl implements PmUserService {
             }
             resultList.add(true);
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "import by excel" );
+        logger.info("");
         return resultList;
     }
 
@@ -204,6 +219,9 @@ public class PmUserServiceImpl implements PmUserService {
                     param.remove("dbID");
             }
         }
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "export to excel ");
+        logger.info("");
         return showList;
     }
 
@@ -230,6 +248,9 @@ public class PmUserServiceImpl implements PmUserService {
 
         }
         updateUser(userList.get(0));
+        MDC.put("userId", "882b82d38a3111e7a501c45444fb4cc1");
+        MDC.put("operation", "verify " + id);
+        logger.info("");
         return 1;
     }
 

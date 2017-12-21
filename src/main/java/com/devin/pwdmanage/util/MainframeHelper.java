@@ -62,8 +62,7 @@ public class MainframeHelper {
     }
 
 
-    public static boolean addUser(PmUsersForShow user)
-    {
+    public static boolean addUser(PmUsersForShow user) {
         ip = user.getIp();
         port = user.getPort();
         userName = user.getRootName();
@@ -80,8 +79,7 @@ public class MainframeHelper {
 
     }
 
-    public static boolean deleteUser(PmUsersForShow user)
-    {
+    public static boolean deleteUser(PmUsersForShow user) {
         ip = user.getIp();
         port = user.getPort();
         userName = user.getRootName();
@@ -95,8 +93,7 @@ public class MainframeHelper {
 
     }
 
-    public static boolean updateUser(PmUsersForShow user, String oldName)
-    {
+    public static boolean updateUser(PmUsersForShow user, String oldName) {
         ip = user.getIp();
         port = user.getPort();
         userName = user.getRootName();
@@ -117,19 +114,6 @@ public class MainframeHelper {
         return false;
 
     }
-//
-//    public boolean ifexit()
-//    {
-//        if(user==null) return false;
-//        ExecCommand jschCommand = new ExecCommand();
-//        if(jschCommand.executeCommand("useradd"+user)==true)
-//        {
-//            return true;
-//        }
-//        else return false;
-//
-//    }
-
 
     public static boolean executeCommand(String command) {
         boolean flag = false;

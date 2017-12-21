@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/default/easyui.css">
+          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/bootstrap/easyui.css">
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/icon.css">
     <script type="text/javascript"
@@ -152,7 +152,7 @@
         <th field="pwd" width="30" align="center">密码(加密后)</th>
         <th field="createTime" width="20" align="center">创建时间</th>
         <th field="remark" width="20" align="center">备注</th>
-        <th field="state" width="20" align="center">状态</th>
+        <th field="roleName" width="20" align="center">角色</th>
     </tr>
     </thead>
 </table>

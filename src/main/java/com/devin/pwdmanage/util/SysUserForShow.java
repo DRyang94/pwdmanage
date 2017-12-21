@@ -1,12 +1,14 @@
-package com.devin.pwdmanage.entity;
+package com.devin.pwdmanage.util;
 
-import org.springframework.stereotype.Component;
+import com.devin.pwdmanage.entity.SysRole;
+import com.devin.pwdmanage.entity.SysUser;
 
 import java.util.Date;
 
-public class SysUser {
+public class SysUserForShow {
     private String userID;
 
+    private String roleID;
     private String userName;
 
     private String pwd;
@@ -17,17 +19,36 @@ public class SysUser {
 
     private String state;
 
-    @Override
-    public String toString() {
-        return "SysUser{" +
-                "userID='" + userID + '\'' +
-                ", userName='" + userName + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", createTime=" + createTime +
-                ", remark='" + remark + '\'' +
-                ", state='" + state + '\'' +
-                '}';
+    private String roleName;
+
+
+    public SysUserForShow() {
+
     }
+
+    public SysUserForShow(String userID, String roleID, String userName, String pwd, Date createTime, String remark, String state, String roleName) {
+        this.userID = userID;
+        this.roleID = roleID;
+        this.userName = userName;
+        this.pwd = pwd;
+        this.createTime = createTime;
+        this.remark = remark;
+        this.state = state;
+        this.roleName = roleName;
+    }
+
+
+    public SysUserForShow(SysUser user, SysRole role) {
+        this.userID = user.getUserID();
+        this.roleID = user.getRoleID();
+        this.userName = user.getUserName();
+        this.pwd = user.getPwd();
+        this.createTime = user.getCreateTime();
+        this.remark = user.getRemark();
+        this.state = user.getState();
+        this.roleName = role.getRoleName();
+    }
+
 
     public String getUserID() {
         return userID;
@@ -78,5 +99,33 @@ public class SysUser {
     }
 
 
+    public String getRoleName() {
+        return roleName;
+    }
 
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleID() {
+        return roleID;
+    }
+
+    public void setRoleID(String roleID) {
+        this.roleID = roleID;
+    }
+
+    @Override
+    public String toString() {
+        return "SysUserForShow{" +
+                "userID='" + userID + '\'' +
+                ", roleID='" + roleID + '\'' +
+                ", userName='" + userName + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", createTime=" + createTime +
+                ", remark='" + remark + '\'' +
+                ", state='" + state + '\'' +
+                ", roleName='" + roleName + '\'' +
+                '}';
+    }
 }

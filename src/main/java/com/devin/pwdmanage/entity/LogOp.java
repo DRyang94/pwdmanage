@@ -3,26 +3,30 @@ package com.devin.pwdmanage.entity;
 import java.util.Date;
 
 public class LogOp {
+
     @Override
     public String toString() {
         return "LogOp{" +
                 "logID=" + logID +
                 ", userID='" + userID + '\'' +
-                ", loginIP='" + loginIP + '\'' +
-                ", typeID=" + typeID +
+                ", opType='" + opType + '\'' +
                 ", operation='" + operation + '\'' +
                 ", createTime=" + createTime +
                 ", remark='" + remark + '\'' +
                 '}';
     }
 
-    public int getLogID() {
+    public String getLogID() {
         return logID;
     }
 
-    public void setLogID(int logID) {
+    public void setLogID(String logID) {
         this.logID = logID;
     }
+
+    private String logID;
+
+
 
     public String getUserID() {
         return userID;
@@ -32,20 +36,12 @@ public class LogOp {
         this.userID = userID;
     }
 
-    public String getLoginIP() {
-        return loginIP;
+    public String getOpType() {
+        return opType;
     }
 
-    public void setLoginIP(String loginIP) {
-        this.loginIP = loginIP;
-    }
-
-    public int getTypeID() {
-        return typeID;
-    }
-
-    public void setTypeID(int typeID) {
-        this.typeID = typeID;
+    public void setOpType(String opType) {
+        this.opType = opType;
     }
 
     public String getOperation() {
@@ -72,19 +68,14 @@ public class LogOp {
         this.remark = remark;
     }
 
-    private int logID;
-
     private String userID;
 
-    private String loginIP;
-
-    private int typeID;
+    private String opType;
 
     private String operation;
 
     private Date createTime;
 
     private String remark;
-
 
 }

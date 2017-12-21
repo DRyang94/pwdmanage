@@ -25,11 +25,14 @@ function login() {
                     window.location.href = "main2.jsp";
                 }
             }
+            else {
+                alert("系统异常！");
+            }
             ;
 
         },
         error: function () {
-            alert("异常！");
+            alert("系统异常！");
         }
     });
 

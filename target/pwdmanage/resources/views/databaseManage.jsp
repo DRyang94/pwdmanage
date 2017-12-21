@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/default/easyui.css">
+          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/bootstrap/easyui.css">
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/icon.css">
     <script type="text/javascript"

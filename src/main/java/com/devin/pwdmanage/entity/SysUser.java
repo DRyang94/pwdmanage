@@ -7,6 +7,21 @@ import java.util.Date;
 public class SysUser {
     private String userID;
 
+    @Override
+    public String toString() {
+        return "SysUser{" +
+                "userID='" + userID + '\'' +
+                ", roleID='" + roleID + '\'' +
+                ", userName='" + userName + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", createTime=" + createTime +
+                ", remark='" + remark + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
+
+    private String roleID;
+
     private String userName;
 
     private String pwd;
@@ -17,17 +32,6 @@ public class SysUser {
 
     private String state;
 
-    @Override
-    public String toString() {
-        return "SysUser{" +
-                "userID='" + userID + '\'' +
-                ", userName='" + userName + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", createTime=" + createTime +
-                ", remark='" + remark + '\'' +
-                ", state='" + state + '\'' +
-                '}';
-    }
 
     public String getUserID() {
         return userID;
@@ -78,5 +82,11 @@ public class SysUser {
     }
 
 
+    public String getRoleID() {
+        return roleID;
+    }
 
+    public void setRoleID(String roleID) {
+        this.roleID = roleID;
+    }
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>密码管理系统</title>
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/default/easyui.css">
+          href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/bootstrap/easyui.css">
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/jquery-easyui-1.3.3/themes/icon.css">
     <script type="text/javascript"
@@ -117,6 +117,10 @@
                class="easyui-linkbutton"
                data-options="plain:true,iconCls:'icon-lxr'" style="width: 150px;">
                 管理员列表</a>
+            <a href="javascript:openTab(' 日志','logShow.jsp','icon-lxr')"
+               class="easyui-linkbutton"
+               data-options="plain:true,iconCls:'icon-lxr'" style="width: 150px;">
+                日志</a>
         </div>
     </div>
 </div>

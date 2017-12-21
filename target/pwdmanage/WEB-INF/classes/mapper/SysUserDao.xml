@@ -6,6 +6,7 @@
     <!-- 目的：为dao接口方法提供sql语句配置 -->
     <resultMap type="SysUser" id="UserResult">
         <result property="userID" column="USER_ID"/>
+        <result property="roleID" column="ROLE_ID"/>
         <result property="userName" column="USERNAME"/>
         <result property="pwd" column="PWD"/>
         <result property="createTime" column="CREATE_TIME"/>
@@ -14,12 +15,12 @@
     </resultMap>
 
     <select id="login" parameterType="SysUser" resultMap="UserResult">
-        select USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
+        select USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
         sys_user where USERNAME=#{userName} and PWD=#{pwd} limit 1
     </select>
 
     <select id="findUsers" parameterType="java.util.Map" resultMap="UserResult">
-        select USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
+        select USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE from
         sys_user
         <where>
             <if test="userName!=null and userName!='' ">
@@ -41,8 +42,8 @@
     </select>
 
     <insert id="addUser" parameterType="SysUser">
-        insert into sys_user(USER_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE)
-        values(#{userID},#{userName},#{pwd},#{createTime},#{remark},#{state})
+        insert into sys_user(USER_ID,ROLE_ID,USERNAME,PWD,CREATE_TIME,REMARK,STATE)
+        values(#{userID},#{roleID},#{userName},#{pwd},#{createTime},#{remark},#{state})
     </insert>
 
     <update id="updateUser" parameterType="SysUser">

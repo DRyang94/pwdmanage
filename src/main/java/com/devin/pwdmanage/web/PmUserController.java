@@ -188,10 +188,8 @@ public class PmUserController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public Result importUser(@RequestParam("file") CommonsMultipartFile uploadExcel,
-            HttpServletResponse response, HttpServletRequest request) throws Exception {
-        String fileName;
+                             HttpServletRequest request) throws Exception {
         InputStream fileContent;
-        fileName = uploadExcel.getOriginalFilename();
         fileContent = uploadExcel.getInputStream();
         Workbook workbook = Workbook.getWorkbook(fileContent);
         Sheet sheet = workbook.getSheet(0);
@@ -224,7 +222,7 @@ public class PmUserController {
         fileContent.close();
         List<Boolean> resultList = pmUserService.importUser(userList);
         if(resultList.contains(true)){
-            //前端可以根据这个结果列表来提示哪个出问题
+            //根据这个结果列表来提示哪个出问题
             JSONArray jsonArray = JSONArray.fromObject(resultList);
             Result result = ResultGenerator.genSuccessResult(jsonArray);
             return result;

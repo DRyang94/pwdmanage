@@ -20,7 +20,7 @@ public class SysUserDaoTest extends BaseTest{
         SysUser test = new SysUser();
         test.setUserName("admin");
         String pwd = MD5Util.MD5Encode("123456","UTF-8");
-        test.setPwd("pwd");
+        test.setPwd(pwd);
         SysUser user = sysUserDao.login(test);
         System.out.println(user);
     }
@@ -42,8 +42,9 @@ public class SysUserDaoTest extends BaseTest{
     public void updateUserTest() {
         SysUser test = new SysUser();
         test.setUserID("47fa9ea788b343239a0e311b43b307b7");
+        test.setRoleID("24efdefb8a3111e7a501c45444fb4cc1");
         test.setUserName("3");
-        test.setPwd("123456");
+        test.setPwd("456789");
         //大于0的意思是成功修改了一条记录,即修改成功,如果updateUser()方法返回值等于0,即修改失败
         sysUserDao.updateUser(test);
     }
@@ -51,9 +52,10 @@ public class SysUserDaoTest extends BaseTest{
     @Test
     public void addUserTest() {
         SysUser test = new SysUser();
-        test.setUserName("test");
+        test.setUserID("47fa9ea788b343239a0e311b43b307b7");
+        test.setRoleID("24efdefb8a3111e7a501c45444fb4cc1");
+        test.setUserName("3");
         test.setPwd("123456");
-        test.setUserID(ColumnGenerator.getUUID());
         test.setCreateTime(ColumnGenerator.getTime());
         sysUserDao.addUser(test);
     }
@@ -61,7 +63,7 @@ public class SysUserDaoTest extends BaseTest{
     @Test
     public void deleteUserTest() {
         //Assert.assertTrue(userDao.deleteUser(51) > 0);
-        sysUserDao.deleteUser("4addd0f70538456db98495b96b75325b");
+        sysUserDao.deleteUser("47fa9ea788b343239a0e311b43b307b7");
     }
 
 }

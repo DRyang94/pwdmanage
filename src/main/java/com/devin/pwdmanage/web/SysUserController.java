@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,12 +81,17 @@ public class SysUserController {
 
         List<SysUser> userList = sysUserService.findUsers(map);
         Long total = sysUserService.getTotalUser(map);
+        List<SysUserForShow> showList = new ArrayList<SysUserForShow>();
+        for(SysUser user: userList) {
+            SysRole resultRole = sysUserService.getRoleByUser(user);
+            showList.add(new SysUserForShow(user, resultRole));
+        }
         JsonConfig config = new JsonConfig();
         config.setIgnoreDefaultExcludes(false);
         config.registerJsonValueProcessor(java.util.Date.class,
                 new JsonDateValueProcessor("yyyy-MM-dd HH:mm:ss"));
         JSONObject result = new JSONObject();
-        JSONArray jsonArray = JSONArray.fromObject(userList, config);
+        JSONArray jsonArray = JSONArray.fromObject(showList, config);
         result.put("rows", jsonArray);
         result.put("total", total);
         ResponseUtil.write(response, result);
