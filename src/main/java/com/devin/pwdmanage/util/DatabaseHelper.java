@@ -49,8 +49,7 @@ public class DatabaseHelper {
         username = user.getRootName();
         pwd = user.getRootPwd();
         Connection conn = getConn();
-        int i = 0;
-//        String sql = "insert into students (Name,Sex,Age) values(?,?,?)";
+        int i;
         String sql1 = "CREATE USER ?@'%' IDENTIFIED BY ?;";
         String sql2 = "GRANT ALL PRIVILEGES ON *.* TO ?@'%' WITH GRANT OPTION;";
         PreparedStatement pstmt1, pstmt2;
@@ -79,7 +78,6 @@ public class DatabaseHelper {
         pwd = user.getRootPwd();
         Connection conn = getConn();
         int i = 0;
-//        String sql = "insert into students (Name,Sex,Age) values(?,?,?)";
         String sql = "DROP USER ?@'%';";
         PreparedStatement pstmt;
         try {
@@ -122,7 +120,6 @@ public class DatabaseHelper {
             user.setUserName(oldName);
             deleteUser(user);
         }
-
         return i;
     }
 
